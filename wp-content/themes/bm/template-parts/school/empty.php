@@ -1,1 +1,0 @@
-<p class="rt-school__list--empty"><?= pll__('Không tìm thấy trường nào.'); ?></p>
