@@ -1,0 +1,21 @@
+extends ../../_core/layouts/layouts-default
+
+append vars
+    -bodyClass = "page-template-thank-you is-transparent"
+    -typeMenu = ""
+
+block container
+    section.rt-thank-you
+        .container 
+            .rt-thank-you__inner
+                .rt-thank-you__image 
+                    img.lazy(data-src="./images/thanks/thank-you.svg" alt="404")
+
+                h1.rt-thank-you__title Information sent successfully!
+
+                .rt-thank-you__desc Thank you for leaving your information, we will contact you as soon as possible.
+                
+                .rt-thank-you__cta 
+                    a(href="#" class="rt-btn rt-btn-primary") Trang chủ
+
+    include ../../components/Gifts/gifts

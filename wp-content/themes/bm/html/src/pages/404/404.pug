@@ -1,0 +1,32 @@
+extends ../../_core/layouts/layouts-default
+
+append vars
+    -bodyClass = "error404 is-transparent"
+
+block container
+    section.rt-404
+        .container 
+            .row 
+                .col-md-6
+                    .rt-404__inner 
+                        .rt-404__subtitle 404 error
+                        h1.rt-404__title Page not found
+                        .rt-404__desc Sorry, the page you are looking for doesn't exist.
+                            br
+                            | Here are some helpful links:
+
+                        .rt-404__cta 
+                            a(href="#" class="rt-btn rt-btn-primary") Trang chủ
+
+                .col-md-6
+                    .rt-404__image 
+                        img.lazy(data-src="./images/404/404.svg" alt="404")
+
+    include ../../components/Gifts/gifts
+                
+                    
+                
+                
+                
+
+                

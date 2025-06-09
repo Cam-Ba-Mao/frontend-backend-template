@@ -1,0 +1,89 @@
+extends ../../_core/layouts/layouts-default
+
+append vars 
+    -bodyClass = "single-post is-transparent"
+    -typeMenu = ""
+    -banner = 2
+
+block container 
+
+    //- Banner
+    include ../../components/Banner/banner
+
+    //- Blog
+    section.rt-details#post_details
+        .container
+            .rt-details__inner
+                .row
+                    .col-lg-4
+                        .rt-blog__sidebar.d-none.d-lg-block
+                            //- Table of Content
+                            include ../../components/DetailsSidebar/toc
+
+                            //- Form
+                            include ../../components/DetailsSidebar/form
+
+                    .col-lg-8
+                        .rt-details__content
+                            //- Table of Content on Mobile
+                            .d-block.d-lg-none.mt-4
+                                include ../../components/DetailsSidebar/toc
+
+                            .post-content
+                                h2 Các tiêu chí để lựa chọn bang
+
+                                img.lazy(data-src="./images/single/post-image-1.jpg" width="100%" alt="")
+                                p Việc lựa chọn bang du học Hoa Kỳ là một quyết định quan trọng, bởi vì nó ảnh hưởng đến trải nghiệm học tập của du học sinh. Dưới đây là các tiêu chí <a href="#">cần xem xét trước khi  link link link</a> đưa ra quyết định cuối cùng:
+
+                                h3#heading_01 Ngành học
+                                p Lựa chọn ngành học là một trong những yếu tố cơ bản cần xem xét khi lựa chọn bang để học tập tại Mỹ. Bởi lẽ, mỗi bang đều có ưu điểm riêng về một số ngành học, nên sinh viên cần tìm hiểu kỹ trước khi đưa ra quyết định. Có thể tìm hiểu thông qua website của trường hoặc các đơn vị tư vấn du học để xem xét mọi vấn đề liên quan, bao gồm cả tính phù hợp của ngành học với mục tiêu nghề nghiệp và khả năng học tập của mình.
+
+                                h3#heading_02 Vị trí địa lý
+                                p Vị trí địa lý cũng là một trong những tiêu chí quan trọng cần cân nhắc khi lựa chọn bang du học. Một số bang thích hợp hơn với người dân Đông Nam Á, như bang California, bang New York, hoặc bang Massachusetts. Các sinh viên cũng nên tìm hiểu thông tin về khí hậu, văn hóa, cộng đồng địa phương, giá cả sinh hoạt và nhu cầu tìm kiếm việc làm trên địa phương để phù hợp với nhu cầu của mình.
+
+                                h3#heading_03 Khả năng tài chính
+                                p Du học ở Hoa Kỳ luôn “ngốn” một khoản tiền lớn. Chình vì vậy, du học sinh nên tính toán kĩ càng các khoản: học phí, chi phí sinh hoạt, đi lại… để tối ưu chi phí du học.
+
+                                h3#heading_03 Khí hậu
+                                p Những bang nằm ở khu vực Đông Bắc thường có khí hậu lạnh và rất khó chịu vào mùa đông. Trong khi những bang nằm ở miền Nam sẽ có khí hậu ấm áp hơn, do vậy, sinh viên có nhiều cơ hội tìm kiếm việc làm thêm để có thể tự xoay xở về chi phí sinh hoạt.
+
+                                h2#heading_04 Top các trường đại học hàng đầu tại Mỹ
+                                p Mỹ là quốc gia có nền giáo dục tuyệt vời với nhiều trường đại học hàng đầu thế giới.
+
+                                h3#heading_05 Thủ đô Washington
+                                p Washington nằm ở Tây Bắc của Hoa Kỳ, là một trong những bang đẹp nhất, sở hữu môi trường xanh sạch và khí hậu ôn hòa. Với nhiều trường đại học hàng đầu như University of Washington và Seattle University, bang Washington cung cấp chất lượng giáo dục hàng đầu và nhiều cơ hội việc làm tốt trên toàn thế giới. Các ngành đào tạo mở rộng từ kinh doanh cho đến y khoa, khoa học máy tính và kỹ thuật… được cung cấp bởi các trường đại học tại Bang này.
+
+                                h3#heading_06 California
+                                p Là một trong những nơi thu hút nhiều du học sinh nhất ở Mỹ. Bang này nằm ở vùng Tây Nam của nước Mỹ và có đường bờ biển Đại Tây Dương trải dài. Khí hậu ở California đa dạng, từ vùng sa mạc khô cằn ở phía Nam đến thung lũng bên bờ biển ẩm ướt ở phía Bắc.
+
+                                p Có nhiều lý do để lựa chọn California làm địa điểm du học Hoa Kỳ. Trước tiên, đây là trung tâm của các hoạt động kinh doanh và công nghiệp quan trọng của Mỹ. Du học sinh có thể tìm thấy nhiều cơ hội việc làm ở các ngành công nghiệp này sau khi tốt nghiệp. Thứ hai, California có nhiều trường đại học hàng đầu thế giới, chẳng hạn như trường đại học California (UC) và Los Angeles (UCLA), đều có những chuyên ngành đào tạo đa dạng và cung cấp chất lượng giáo dục hàng đầu.
+
+                                p Danh sách các trường đại học khác mà du học sinh có thể lựa chọn gồm:
+                                ul
+                                    li California State University
+                                    li California State Polytechnic University
+                                    li San Francisco State University...
+
+                                img(src="./images/single/post-image-2.jpg" width="100%" alt="")
+
+                                h3#heading_07 Florida
+                                p Florida là một trong những bang có nền giáo dục tốt nhất tại Mỹ. Với vị trí địa lý thuận tiện trên bờ biển Đại Tây Dương của Mỹ, khí hậu quanh năm ấm áp, Florida là lựa chọn tuyệt vời cho du học sinh muốn tận hưởng một môi trường học tập và sống đầy đủ tiện nghi và sinh hoạt tốt. Nơi đây có một hệ thống giáo dục đa dạng cùng với nhiều cơ hội thực tập, việc làm và hợp tác doanh nghiệp.
+
+                                p Ở Florida, các trường đại học có nhiều chuyên ngành học khác nhau như y học, kinh doanh, kỹ thuật, ngôn ngữ, khoa học nghiên cứu và nhiều hơn nữa. Du học sinh có thể chọn từ các chương trình học tập chính hoặc các chương trình học tập mở rộng như tổ chức nghiên cứu, thực tập và các hoạt động phát triển kỹ năng.
+
+                    .col-12.d-block.d-lg-none
+                        //- Form
+                        include ../../components/DetailsSidebar/form
+
+    //- Gifts
+    include ../../components/Gifts/gifts
+
+    //- Regist Form
+    include ../../components/Form/form
+
+    //- Related posts
+    include ../../components/RelatedPosts/related-posts
+
+    //- Back link
+    .bottom-link
+        include ../../components/BackLink/back-link

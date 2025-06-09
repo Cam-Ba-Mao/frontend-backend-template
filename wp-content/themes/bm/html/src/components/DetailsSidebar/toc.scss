@@ -1,0 +1,86 @@
+.rt-details {
+    &__toc {
+        max-width: 100%;
+        background-color: $white-3;
+        border-radius: 0.5rem;
+        padding: 2rem 1.5rem;
+        margin-bottom: 3rem;
+
+        @include breakpoint-up(lg) {
+            max-width: 23rem;
+            background-color: transparent;
+            border-radius: 0;
+            padding: 0;
+            margin-bottom: 3.375rem;
+        }
+
+        @include breakpoint-up(xxl) {}
+
+        .heading {
+            .toc-title {
+                font-family: $font-family-secondary;
+                font-size: 1.375rem;
+                font-weight: 700;
+                line-height: calc(32/22);
+                text-align: left;
+                margin-bottom: 1rem;
+
+                @include breakpoint-up(lg) {
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+
+        ul.list {
+            list-style-type: none;
+            border-left: solid 0.0625rem $black;
+            padding-left: 0;
+            margin-bottom: 0;
+
+            li {
+                transition: border-left 0.1s ease-in-out;
+                padding-left: 1.125rem;
+
+                &:not(:last-child) {
+                    margin-bottom: 0.5rem;
+                }
+
+                &.main {
+                    text-align: left;
+
+                    &:not(:first-of-type) {
+                        margin-top: 1.125rem;
+                    }
+
+                    a {
+                        font-size: 1.125rem;
+                        line-height: calc(26/18);
+                    }
+                }
+
+                &.toc-active {
+                    border-left: solid 0.25rem $black-2;
+
+                    a {
+                        font-weight: 700;
+                        font-size: 1.125rem;
+                        line-height: calc(26/18);
+                    }
+                }
+
+                &.subheading {
+                    padding-left: 2rem;
+                }
+
+                a {
+                    color: $black-2;
+                    font-family: $font-family-primary;
+                    font-size: 1rem;
+                    font-weight: 400;
+                    line-height: calc(24/16);
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

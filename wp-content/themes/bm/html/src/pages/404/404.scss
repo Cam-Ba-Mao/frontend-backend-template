@@ -1,0 +1,80 @@
+body {
+    &.error404 {
+        .rt-gifts {
+            padding-top: 0; 
+        }        
+    }
+}
+
+.rt-404 {    
+    background: $color-040F49 url('../images/thanks/bg.webp') no-repeat center center / cover;
+    position: relative;
+    min-height: 100vh;
+    padding-top: var(--mh);
+    padding-bottom: 3rem;
+    overflow: hidden;
+    color: $white;
+    display: grid;
+    align-items: center;
+
+    @include breakpoint-up(md) {
+        min-height: calc(100vh - var(--gi));
+    }
+
+    .row {
+        align-items: center;
+
+        @include breakpoint-down(md) {
+            flex-direction: column-reverse;
+        }
+
+    }
+
+    &__subtitle {
+        font-weight: 600;
+        margin-bottom: .75rem;
+    }
+
+    &__title {
+        font-size: 36px;
+        letter-spacing: -1.232px;
+        font-weight: 700;
+        line-height: calc(68/56);
+        font-family: $font-family-secondary;
+
+        @include breakpoint-up(sm) {
+            font-size: 40px;
+        }
+
+        @include breakpoint-up(md) {
+            font-size: 48px;
+        }
+
+        @include breakpoint-up(lg) {
+            font-size: 56px;
+        }
+    }
+
+    &__desc {
+        margin-top: 1rem;
+
+        @include breakpoint-up(md) {
+            margin-top: 1.5rem;
+        }
+    }
+
+    &__cta {
+        margin-top: 1rem;
+
+        @include breakpoint-up(md) {
+            margin-top: 1.5rem;
+        }
+
+        .rt-btn {
+            border-radius: 8px;
+            padding: 1rem 4.25rem;
+            
+        }
+    }
+}
+

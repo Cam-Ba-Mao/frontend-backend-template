@@ -1,0 +1,60 @@
+extends ../../_core/layouts/layouts-default
+
+append vars
+    -bodyClass = "page-template-event is-transparent"
+    -typeMenu = "iedg-header-transparents"
+    -banner = 1
+
+block container
+
+    //- Banner
+    include ../../components/Banner/banner
+
+    //- Event Archive
+    section.rt-event-archive 
+        .container 
+            .row
+                .col-lg-4.col-xl-3
+                    include ../../components/ArchiveSidebar/archive-sidebar-2
+                         
+                .col-lg-8.col-xl-9
+                    .rt-event-archive__inner   
+                        h1.rt-title Sự kiện - Webinar
+                        include ../../components/ArchiveFilter/archive-filter
+
+                    .rt-event-archive__list
+                        -
+                            items = [1,2,3,4,5]
+
+                        each val in items    
+                            .rt-event-archive__item
+                                a(href="#" class="rt-event-archive__item--image")
+                                    img.lazy(data-src="./images/event/event-"+val+".jpg" alt="")
+
+                                .rt-event-archive__item--body
+                                    .rt-event-archive__item--inner
+                                        a(class="rt-event-archive__item--tag" href="#") Sắp diễn ra
+
+                                        h2.rt-event-archive__item--title
+                                            a(href="#") Thanksgiving Day and the meaning of gratitude
+
+                                        .rt-event-archive__item--info 
+                                            .rt-event-archive__item--location
+                                                svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                    path(d="M13.5 6C13.5 10.5 8 15.5 8 15.5C8 15.5 2.5 10.5 2.5 6C2.5 4.54131 3.07946 3.14236 4.11091 2.11091C5.14236 1.07946 6.54131 0.5 8 0.5C9.45869 0.5 10.8576 1.07946 11.8891 2.11091C12.9205 3.14236 13.5 4.54131 13.5 6V6Z" stroke="#202121" stroke-linecap="round" stroke-linejoin="round")
+                                                    path(d="M8 8.5C9.38071 8.5 10.5 7.38071 10.5 6C10.5 4.61929 9.38071 3.5 8 3.5C6.61929 3.5 5.5 4.61929 5.5 6C5.5 7.38071 6.61929 8.5 8 8.5Z" stroke="#202121" stroke-linecap="round" stroke-linejoin="round")
+                                                span Số 10, Đường Ba Tháng Hai, Phường 12, Quận 10, TP.HCM (Tầng 5, Hội trường PennSchool)
+    
+                                            .rt-event-archive__item--time
+                                                svg(width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg")
+                                                    path(d="M8.5 15.5C12.366 15.5 15.5 12.366 15.5 8.5C15.5 4.63401 12.366 1.5 8.5 1.5C4.63401 1.5 1.5 4.63401 1.5 8.5C1.5 12.366 4.63401 15.5 8.5 15.5Z" stroke="#202121" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                                    path(d="M8.5 4.5V8.5H12.5" stroke="#202121" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round")
+                                                span 14:00 - 17:30 PM
+
+                                        .rt-event-archive__item--desc Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature...
+
+                        .rt-event__list--more
+                            button.btn.rt-button__loadmore(type="button") Xem thêm
+    //- Gifts
+    include ../../components/Gifts/gifts
+    

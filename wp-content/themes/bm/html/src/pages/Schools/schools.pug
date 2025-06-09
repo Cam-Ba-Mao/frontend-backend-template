@@ -1,0 +1,418 @@
+extends ../../_core/layouts/layouts-default
+
+append vars
+    -bodyClass = "page-template-schools is-transparent"
+    -typeMenu = ""
+
+block container
+    
+    section.rt-school__banner
+                .rt-school__banner--head
+                    .container
+                        .rt-block__heading
+                            .rt-title Khám phá các trường Đại học Top 1% thế giới
+                            .rt-title__desc Xem danh sách toàn bộ các trường Đại học hàng đầu
+                .rt-school__banner--body
+                    .container
+                        form.rt-school__banner--form(action="./schools.html" method="post")
+                                .rt-school__banner--form__fields
+                                    .rt-school__banner--form__field.dropdown
+                                        button.btn.dropdown-toggle(type="button" data-bs-toggle="dropdown" data-label="Chọn quốc gia") Chọn quốc gia
+                                        .dropdown-menu
+                                            ul.items
+                                                li
+                                                    a.active(href="" data-value="my")
+                                                        span Mỹ
+                                                li
+                                                    a(href="" data-value="canada")
+                                                        span Canada
+                                                li
+                                                    a(href="" data-value="uc")
+                                                        span Úc
+                                                li
+                                                    a(href="" data-value="anh")
+                                                        span Anh
+                                                li
+                                                    a(href="" data-value="duc")
+                                                        span Đức
+                                            //- Có check chọn show nút reset
+                                            button.btn.btn-reset.d-none(type="button") Bỏ chọn
+
+                                    .rt-school__banner--form__field.dropdown
+                                        button.btn.dropdown-toggle(type="button" data-bs-toggle="dropdown" data-label="Chọn Tỉnh bang/Thành phố") Chọn Tỉnh bang/Thành phố
+                                        .dropdown-menu
+                                            //- Trên 8 items hiện khung search
+                                            .rt-school__banner--form__field--search
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                    <g opacity="0.5">
+                                                        <path d="M21.354 20.646L17.345 16.637C18.681 15.135 19.501 13.164 19.501 11C19.501 6.313 15.688 2.5 11.001 2.5C6.31398 2.5 2.50098 6.313 2.50098 11C2.50098 15.687 6.31398 19.5 11.001 19.5C13.165 19.5 15.136 18.68 16.638 17.344L20.647 21.353C20.745 21.451 20.873 21.499 21.001 21.499C21.129 21.499 21.257 21.45 21.355 21.353C21.549 21.158 21.549 20.842 21.354 20.646ZM3.5 11C3.5 6.865 6.864 3.5 11 3.5C15.136 3.5 18.5 6.865 18.5 11C18.5 15.135 15.136 18.5 11 18.5C6.864 18.5 3.5 15.135 3.5 11Z" fill="white"/>
+                                                    </g>
+                                                </svg>
+                                                input.tax-search(type="text" placeholder="Tìm kiếm...")
+                                            ul.items
+                                                li
+                                                    label
+                                                        input(type="radio" name="province" value="alabama")
+                                                        span Alabama
+                                                li
+                                                    label
+                                                        input(type="radio" name="province" value="alaska")
+                                                        span Alaska
+                                                li
+                                                    label
+                                                        input(type="radio" name="province" value="arizona")
+                                                        span Arizona
+                                                li
+                                                    label
+                                                        input(type="radio" name="province" value="arkansas")
+                                                        span Arkansas
+                                                li
+                                                    label
+                                                        input(type="radio" name="province" value="california")
+                                                        span California
+                                                li
+                                                    label
+                                                        input(type="radio" name="province" value="colorado")
+                                                        span Colorado
+                                                li
+                                                    label
+                                                        input(type="radio" name="province" value="connecticut")
+                                                        span Connecticut
+                                                li
+                                                    label
+                                                        input(type="radio" name="province" value="district-of-columbia")
+                                                        span District of Columbia
+                                                li
+                                                    label
+                                                        input(type="radio" name="province" value="british-columbia")
+                                                        span British Columbia
+                                                        
+                                            //- Có check chọn show nút reset
+                                            button.btn.btn-reset.d-none(type="button") Bỏ chọn
+
+                                    .rt-school__banner--form__field.dropdown
+                                        button.btn.dropdown-toggle(type="button" data-bs-toggle="dropdown" data-label="Chọn bậc học") Chọn bậc học
+                                        .dropdown-menu(data-name="level")
+                                            ul.items
+                                                li
+                                                    label
+                                                        input(type="radio" name="level" value="thpt")
+                                                        span THPT
+                                                li
+                                                    label
+                                                        input(type="radio" name="level" value="cao-dang")
+                                                        span Cao đẳng
+                                                li
+                                                    label
+                                                        input(type="radio" name="level" value="du-bi-dai-hoc")
+                                                        span Dự bị đại học
+                                                li
+                                                    label
+                                                        input(type="radio" name="level" value="dai-hoc")
+                                                        span Đại học
+                                                li
+                                                    label
+                                                        input(type="radio" name="level" value="sau-dai-hoc")
+                                                        span Sau đại học
+                                                li
+                                                    label
+                                                        input(type="radio" name="level" value="hoc-tieng")
+                                                        span Học tiếng
+                                                li
+                                                    label
+                                                        input(type="radio" name="level" value="dao-tao-nghe")
+                                                        span Đào tạo nghề
+
+                                            //- Có check chọn show nút reset
+                                            button.btn.btn-reset.d-none(type="button") Bỏ chọn
+
+                                    .rt-school__banner--form__field.dropdown
+                                        button.btn.dropdown-toggle(type="button" data-bs-toggle="dropdown" data-label="Học phí tham khảo") Học phí tham khảo
+                                        .dropdown-menu(data-name="fees")
+                                            ul.items
+                                                li
+                                                    label
+                                                        input(type="radio" name="fees" value="1000-1400")
+                                                        span From 1,000$ to 1,400$
+                                                li
+                                                    label
+                                                        input(type="radio" name="fees" value="1400-2000")
+                                                        span From 1,400$ to 2,000$
+                                                li
+                                                    label
+                                                        input(type="radio" name="fees" value="2000-max")
+                                                        span Up 2,000$
+                                            
+                                            //- Có check chọn show nút reset
+                                            button.btn.btn-reset.d-none(type="button") Bỏ chọn
+
+                                .rt-school__banner--form__field--submit.d-none.d-lg-block
+                                    button.btn.btn-primary.btn-search
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M21.354 20.646L17.345 16.637C18.681 15.135 19.501 13.164 19.501 11C19.501 6.313 15.688 2.5 11.001 2.5C6.31398 2.5 2.50098 6.313 2.50098 11C2.50098 15.687 6.31398 19.5 11.001 19.5C13.165 19.5 15.136 18.68 16.638 17.344L20.647 21.353C20.745 21.451 20.873 21.499 21.001 21.499C21.129 21.499 21.257 21.45 21.355 21.353C21.549 21.158 21.549 20.842 21.354 20.646ZM3.5 11C3.5 6.865 6.864 3.5 11 3.5C15.136 3.5 18.5 6.865 18.5 11C18.5 15.135 15.136 18.5 11 18.5C6.864 18.5 3.5 15.135 3.5 11Z" fill="white"/>
+                                        </svg>
+                                        span Tìm trường
+
+
+    section.rt-school__list#ajaxdata
+                .container
+                    .rt-block__heading
+                        h1.rt-title Danh sách trường
+                    .rt-school__list--posts
+                        a.rt-school__post(href="./school-single.html")
+                            .rt-school__post--image
+                                .rt-school__post--image__large
+                                    img.lazy(data-src="./images/schools/post1-large.png" alt="")
+                                .rt-school__post--image__small
+                                    img.school-logo.lazy(data-src="./images/schools/post1-small.svg" alt="")
+                            .rt-school__post--entry
+                                h3.rt-school__post--title Princeton University
+                                ul.rt-school__post--meta
+                                    li
+                                        span Quốc gia
+                                        strong Mỹ
+                                    li
+                                        span Tỉnh bang/Thành phố
+                                        strong California
+                                    li
+                                        span Bậc học
+                                        strong Đại học, Sau đại học
+                                    li
+                                        span Học phí tham khảo
+                                        strong 14,000$
+                        a.rt-school__post(href="./school-single.html")
+                            .rt-school__post--image
+                                .rt-school__post--image__large
+                                    img.lazy(data-src="./images/schools/post2-large.png" alt="")
+                                .rt-school__post--image__small
+                                    img.school-logo.lazy(data-src="./images/schools/post2-small.svg" alt="")
+                            .rt-school__post--entry
+                                h3.rt-school__post--title Trường Trung học Unisus School - British Columbia, Canada
+                                ul.rt-school__post--meta
+                                    li
+                                        span Quốc gia
+                                        strong Canada
+                                    li
+                                        span Tỉnh bang/Thành phố
+                                        strong British Columbia
+                                    li
+                                        span Bậc học
+                                        strong THPT
+                                    li
+                                        span Học phí tham khảo
+                                        strong 28,850$
+                        a.rt-school__post(href="./school-single.html")
+                            .rt-school__post--image
+                                .rt-school__post--image__large
+                                    img.lazy(data-src="./images/schools/post3-large.png" alt="")
+                                .rt-school__post--image__small
+                                    img.school-logo.lazy(data-src="./images/schools/post3-small.svg" alt="")
+                            .rt-school__post--entry
+                                h3.rt-school__post--title Trường Colorado State University
+                                ul.rt-school__post--meta
+                                    li
+                                        span Quốc gia
+                                        strong Mỹ
+                                    li
+                                        span Tỉnh bang/Thành phố
+                                        strong California
+                                    li
+                                        span Bậc học
+                                        strong Đại học, Sau đại học
+                                    li
+                                        span Học phí tham khảo
+                                        strong 14,000$
+                        a.rt-school__post(href="./school-single.html")
+                            .rt-school__post--image
+                                .rt-school__post--image__large
+                                    img.lazy(data-src="./images/schools/post4-large.png" alt="")
+                                .rt-school__post--image__small
+                                    img.school-logo.lazy(data-src="./images/schools/post4-small.svg" alt="")
+                            .rt-school__post--entry
+                                h3.rt-school__post--title Trường Trung học Unisus School - British Columbia, Canada
+                                ul.rt-school__post--meta
+                                    li
+                                        span Quốc gia
+                                        strong Canada
+                                    li
+                                        span Tỉnh bang/Thành phố
+                                        strong British Columbia
+                                    li
+                                        span Bậc học
+                                        strong THPT
+                                    li
+                                        span Học phí tham khảo
+                                        strong 28,850$
+                        a.rt-school__post(href="./school-single.html")
+                            .rt-school__post--image
+                                .rt-school__post--image__large
+                                    img.lazy(data-src="./images/schools/post5-large.png" alt="")
+                                .rt-school__post--image__small
+                                    img.school-logo.lazy(data-src="./images/schools/post5-small.svg" alt="")
+                            .rt-school__post--entry
+                                h3.rt-school__post--title Princeton University
+                                ul.rt-school__post--meta
+                                    li
+                                        span Quốc gia
+                                        strong Mỹ
+                                    li
+                                        span Tỉnh bang/Thành phố
+                                        strong California
+                                    li
+                                        span Bậc học
+                                        strong Đại học, Sau đại học
+                                    li
+                                        span Học phí tham khảo
+                                        strong 14,000$
+                        a.rt-school__post(href="./school-single.html")
+                            .rt-school__post--image
+                                .rt-school__post--image__large
+                                    img.lazy(data-src="./images/schools/post6-large.png" alt="")
+                                .rt-school__post--image__small
+                                    img.school-logo.lazy(data-src="./images/schools/post6-small.svg" alt="")
+                            .rt-school__post--entry
+                                h3.rt-school__post--title Trường Colorado State University
+                                ul.rt-school__post--meta
+                                    li
+                                        span Quốc gia
+                                        strong Mỹ
+                                    li
+                                        span Tỉnh bang/Thành phố
+                                        strong California
+                                    li
+                                        span Bậc học
+                                        strong Đại học, Sau đại học
+                                    li
+                                        span Học phí tham khảo
+                                        strong 14,000$
+                        a.rt-school__post(href="./school-single.html")
+                            .rt-school__post--image
+                                .rt-school__post--image__large
+                                    img.lazy(data-src="./images/schools/post7-large.png" alt="")
+                                .rt-school__post--image__small
+                                    img.school-logo.lazy(data-src="./images/schools/post7-small.svg" alt="")
+                            .rt-school__post--entry
+                                h3.rt-school__post--title Princeton University
+                                ul.rt-school__post--meta
+                                    li
+                                        span Quốc gia
+                                        strong Mỹ
+                                    li
+                                        span Tỉnh bang/Thành phố
+                                        strong California
+                                    li
+                                        span Bậc học
+                                        strong Đại học, Sau đại học
+                                    li
+                                        span Học phí tham khảo
+                                        strong 14,000$
+                        a.rt-school__post(href="./school-single.html")
+                            .rt-school__post--image
+                                .rt-school__post--image__large
+                                    img.lazy(data-src="./images/schools/post8-large.png" alt="")
+                                .rt-school__post--image__small
+                                    img.school-logo.lazy(data-src="./images/schools/post8-small.svg" alt="")
+                            .rt-school__post--entry
+                                h3.rt-school__post--title Trường Trung học Unisus School - British Columbia, Canada
+                                ul.rt-school__post--meta
+                                    li
+                                        span Quốc gia
+                                        strong Canada
+                                    li
+                                        span Tỉnh bang/Thành phố
+                                        strong British Columbia
+                                    li
+                                        span Bậc học
+                                        strong THPT
+                                    li
+                                        span Học phí tham khảo
+                                        strong 28,850$
+                        a.rt-school__post(href="./school-single.html")
+                            .rt-school__post--image
+                                .rt-school__post--image__large
+                                    img.lazy(data-src="./images/schools/post9-large.png" alt="")
+                                .rt-school__post--image__small
+                                    img.school-logo.lazy(data-src="./images/schools/post9-small.svg" alt="")
+                            .rt-school__post--entry
+                                h3.rt-school__post--title Trường Colorado State University
+                                ul.rt-school__post--meta
+                                    li
+                                        span Quốc gia
+                                        strong Mỹ
+                                    li
+                                        span Tỉnh bang/Thành phố
+                                        strong California
+                                    li
+                                        span Bậc học
+                                        strong Đại học, Sau đại học
+                                    li
+                                        span Học phí tham khảo
+                                        strong 14,000$
+
+                    .rt-school__list--more
+                        button.btn.btn-primary.rt-button__loadmore Xem thêm
+
+
+    section.rt-school__faqs
+                .container
+                    .row
+                        .col-lg-6
+                            .rt-school__faqs--image
+                                img.lazy(data-src="./images/schools/faqs-image.png" alt="")
+                        .col-lg-6
+                            .rt-school__faqs--list
+                                .rt-block__heading
+                                    h2.rt-title Câu hỏi thường gặp khi đi du học?
+                                .rt-school__faqs--list__posts
+                                    div(class="accordion" id="accordionExample")
+                                        div(class="accordion-item")
+                                            h3(class="accordion-header" id="rt-faq-heading-1")
+                                                button(class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#rt-content-1" aria-expanded="false" aria-controls="rt-content-1") 
+                                                   .rt-school__faqs--list__posts--title 1. Tại sao lại du học ở nước ngoài?
+
+                                            div(id="rt-content-1" class="accordion-collapse collapse" aria-labelledby="rt-faq-heading-1" data-bs-parent="#accordionExample")
+                                                div(class="accordion-body")
+                                                    p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+                                        div(class="accordion-item")
+                                            h3(class="accordion-header" id="rt-faq-heading-2")
+                                                button(class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#rt-content-2" aria-expanded="false" aria-controls="rt-content-2") 
+                                                   .rt-school__faqs--list__posts--title 2. Tôi nên học ở đâu trên thế giới?
+
+                                            div(id="rt-content-2" class="accordion-collapse collapse" aria-labelledby="rt-faq-heading-2" data-bs-parent="#accordionExample")
+                                                div(class="accordion-body")
+                                                    p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                        div(class="accordion-item")
+                                            h3(class="accordion-header" id="rt-faq-heading-3")
+                                                button(class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#rt-content-3" aria-expanded="false" aria-controls="rt-content-3") 
+                                                   .rt-school__faqs--list__posts--title 3. Các chương trình học nước ngoài mất bao lâu?
+
+                                            div(id="rt-content-3" class="accordion-collapse collapse" aria-labelledby="rt-faq-heading-3" data-bs-parent="#accordionExample")
+                                                div(class="accordion-body")
+                                                    p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                        div(class="accordion-item")
+                                            h3(class="accordion-header" id="rt-faq-heading-4")
+                                                button(class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#rt-content-4" aria-expanded="false" aria-controls="rt-content-4") 
+                                                   .rt-school__faqs--list__posts--title 4. Khi nào tôi có thể bắt đầu nộp đơn cho chương trình du học?
+
+                                            div(id="rt-content-4" class="accordion-collapse collapse" aria-labelledby="rt-faq-heading-4" data-bs-parent="#accordionExample")
+                                                div(class="accordion-body")
+                                                    p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                        div(class="accordion-item")
+                                            h3(class="accordion-header" id="rt-faq-heading-5")
+                                                button(class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#rt-content-5" aria-expanded="false" aria-controls="rt-content-5") 
+                                                   .rt-school__faqs--list__posts--title 5. Các yêu cầu đầu vào cho chương trình học tập ở nước ngoài là gì?
+
+                                            div(id="rt-content-5" class="accordion-collapse collapse" aria-labelledby="rt-faq-heading-5" data-bs-parent="#accordionExample")
+                                                div(class="accordion-body")
+                                                    p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                        div(class="accordion-item")
+                                            h3(class="accordion-header" id="rt-faq-heading-6")
+                                                button(class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#rt-content-6" aria-expanded="false" aria-controls="rt-content-6") 
+                                                   .rt-school__faqs--list__posts--title 6. Tôi nên nộp tài liệu gì kèm theo đơn xin nhập học?
+
+                                            div(id="rt-content-6" class="accordion-collapse collapse" aria-labelledby="rt-faq-heading-6" data-bs-parent="#accordionExample")
+                                                div(class="accordion-body")
+                                                    p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+
+    include ../../components/Gifts/gifts

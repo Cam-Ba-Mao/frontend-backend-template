@@ -1,0 +1,35 @@
+section.rt-form#registForm
+    .rt-form__inner
+        .container
+            .row
+                .col-lg-6
+                    .img-wrapper
+                        img.lazy(data-src="../images/single/form-poster.png" width="100%" alt="")
+                        .rt-form__lines
+                            .line.line-pink
+                                img.lazy(data-src="../images/single/pink-line.svg" alt="")
+                            .line.line-blue
+                                img.lazy(data-src="../images/single/blue-line.svg" alt="")
+                            .line.line-yellow
+                                img.lazy(data-src="../images/single/yellow-line.svg" alt="")
+                            .line.line-purple
+                                img.lazy(data-src="../images/single/purple-line.svg" alt="")
+
+                .d-none.d-lg-block.col-lg-auto
+
+                .col-lg-5
+                    .rt-form__form
+                        h2.rt-title Bạn muốn du học?
+                        h3.rt-subtitle Liên hệ ngay với chuyên gia tư vấn của ISA.
+                        .wpforms-container.wpforms-container-full
+                            form(action="./styleguide.html" class="wpforms-validate wpforms-form wpforms-ajax-form")
+                                .wpforms-field-container
+                                    +wpf-input("wpf-input-1", "Họ tên *", "Họ tên", "", "wpf-icon wpf-icon-name")
+                                    +wpf-input("wpf-input-2", "Điện thoại *", "Điện thoại", "", "wpf-icon wpf-icon-phone")
+                                    +wpf-input("wpf-input-3", "Email *", "Email", "", "wpf-icon wpf-icon-email")
+                                    +wpf-select("Quốc gia bạn dự định du học", "Quốc gia bạn dự định du học", "Mỹ", "Anh", "Pháp", "Đức", "Úc")
+                                    +wpf-select("Bạn dự định du học khi nào?", "Bạn dự định du học khi nào?", "Hè năm 2024", "Thu năm 2024", "Xuân năm 2025", "Hè năm 2025")
+                                    +wpf-select("Chọn loại hình tư vấn", "Chọn loại hình tư vấn", "Trực tiếp", "Gián tiếp")
+                                    +wpf-select("Bậc học bạn quan tâm ?", "Bậc học bạn quan tâm ?", "Cao đẳng", "Đại học", "Cao học")
+                                .wpforms-submit-container
+                                    button(type="submit" class="wpforms-submit is-icon" data-alt-text="Sending..." data-submit-text="Submit") GỬI THÔNG TIN

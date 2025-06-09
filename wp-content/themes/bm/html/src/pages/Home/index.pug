@@ -1,0 +1,278 @@
+extends ../../_core/layouts/layouts-default
+
+append vars
+    -bodyClass = "page-template-home is-transparent"
+    -typeMenu = ""
+
+block container
+    
+    section.isa-home-banner 
+        .isa-home-banner__slider.swiper.swiper-container 
+            .swiper-wrapper 
+                -
+                    banner = [
+                        {
+                            "category": "Công dân toàn cầu",
+                            "subtitle": "Trở thành công dân toàn cầu cùng 1",
+                            "title": "Du học ISA"
+                        },
+                        {
+                            "category": "Workshops",
+                            "subtitle": "Trở thành công dân toàn cầu cùng 2",
+                            "title": "Du học Canada"
+                        },
+                        {
+                            "category": "Du học hè Summer Camp 2024",
+                            "subtitle": "Trở thành công dân toàn cầu cùng 3",
+                            "title": "Du học mỹ"
+                        },
+                        {
+                            "category": "Kinh nghiệm du học",
+                            "subtitle": "Trở thành công dân toàn cầu cùng 4",
+                            "title": "Du học Úc"
+                        },
+                    ]
+                
+                each val, key in banner
+                    .swiper-slide(data-pager-category=`${val.category}`)
+                        .isa-home-banner__slider--container 
+                            .isa-home-banner__slider--overlay
+                                .title-category #{val.subtitle}
+                                if (0 == key)
+                                    h1.title #{val.title}
+                                else
+                                    .title #{val.title}
+                                
+                                a(href="#" class="btn-text") Khám phá ngay
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M21.353 12.354L14.353 19.354C14.255 19.452 14.127 19.5 13.999 19.5C13.871 19.5 13.743 19.451 13.645 19.354C13.45 19.159 13.45 18.842 13.645 18.647L19.791 12.501H3C2.724 12.501 2.5 12.277 2.5 12.001C2.5 11.725 2.724 11.501 3 11.501H19.793L13.647 5.35499C13.452 5.15999 13.452 4.84296 13.647 4.64796C13.842 4.45296 14.159 4.45296 14.354 4.64796L21.354 11.648C21.4 11.694 21.4369 11.75 21.4619 11.811C21.5129 11.933 21.5129 12.0711 21.4619 12.1931C21.4359 12.2521 21.399 12.308 21.353 12.354Z" fill="white"/>
+                                    </svg>
+                            //- img.bg(src=`./images/home/banner-${key + 1}.jpg`, alt="")
+        .isa-home-banner__video
+            video(muted loop autoplay)
+                source(src="./images/home/banner-video.mp4" type="video/mp4")
+
+        .isa-home-banner__pager
+            button(class="pause" type="button" id="toggleButtonPause")
+                span.icon
+                <svg class="rt-progress over" xmlns="http://www.w3.org/2000/svg" width="34" height="34">
+                    <path d="M17 1.5c8.6 0 15.5 6.9 15.5 15.5S25.6 32.5 17 32.5 1.5 25.6 1.5 17 8.4 1.5 17 1.5" fill="none" stroke="#fff" stroke-width="3" stroke-miterlimit="10"></path>
+                </svg>
+                <svg class="rt-progress under" xmlns="http://www.w3.org/2000/svg" width="34" height="34">
+                    <path d="M17 1.5c8.6 0 15.5 6.9 15.5 15.5S25.6 32.5 17 32.5 1.5 25.6 1.5 17 8.4 1.5 17 1.5" fill="none" stroke="#fff" stroke-width="3" stroke-miterlimit="10"></path>
+                </svg>
+            .slider-pagination
+  
+    //- Vist Location
+    section.isa-vist-location(id="location")
+        .isa-vist-location__body
+            .container
+                .isa-vist-location__list.swiper.swiper-container
+                    .swiper-wrapper 
+                        -
+                        
+                            items = [
+                                {
+                                    "img": "1",
+                                    "subtitle": "Du học",
+                                    "title": "Trung học Mỹ"
+                                },
+                                {
+                                    "img": "2",
+                                    "subtitle": "Du học",
+                                    "title": "Trung học Canada"
+                                },
+                                {
+                                    "img": "3",
+                                    "subtitle": "Du học hè",
+                                    "title": "Summer Camp 2024"
+                                },
+                                {
+                                    "img": "2",
+                                    "subtitle": "Du học",
+                                    "title": "Trung học Úc"
+                                },
+                                
+                            ]
+                        
+                        each val, key in items
+                            .swiper-slide
+                                a(href="#") 
+                                    .isa-vist-location__image
+                                        .rt-img-drop
+                                            img(src=`./images/home/vist-location-${val.img}.jpg` alt="")
+                                    .isa-vist-location__wrap 
+                                        .isa-vist-location__wrap--subtitle #{val.subtitle}
+                                        .isa-vist-location__wrap--title #{val.title}
+                                        .isa-vist-location__wrap--cta 
+                                            .rt-btn.rt-btn-outline-primary Xem ngay 
+                    .isa-vist-location__arrow 
+                            .isa-vist-location__arrow--prev
+                                <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.4534 1.25559L10.0282 6.6993C8.47544 8.17965 7.25704 8.86237 5.69871 9.24177C4.86049 9.4458 4.19058 10.179 4.19138 11.1036C4.19225 12.1625 4.98683 13.0814 6.10554 13.0823C7.22425 13.0832 31.9579 13.1031 31.9579 13.1031C31.9803 13.1031 31.9985 13.121 31.9986 13.1431L32 14.8867C32 14.9088 31.9819 14.9266 31.9594 14.9266L6.10702 14.9058C3.83163 14.904 3.56584 18.2312 5.7168 18.7436C7.32689 19.1271 8.59797 19.8266 10.2499 21.4527L15.4776 26.7448C15.4929 26.7603 15.4929 26.7849 15.4777 26.8004L14.3047 27.988C14.2887 28.0041 14.2622 28.004 14.2463 27.9877L0.0113201 14.0433C-0.00375748 14.0278 -0.00375748 14.0033 0.0113201 13.9879L14.2218 0.0121844C14.2377 -0.00403897 14.2642 -0.00406558 14.2802 0.0121294L15.4534 1.19982C15.4688 1.21538 15.4687 1.24013 15.4534 1.25559Z" fill="white"/>
+                                </svg>
+
+                            .isa-vist-location__arrow--next
+                                <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.5466 1.25559L21.9718 6.6993C23.5246 8.17965 24.743 8.86237 26.3013 9.24177C27.1395 9.4458 27.8094 10.179 27.8086 11.1036C27.8078 12.1625 27.0132 13.0814 25.8945 13.0823C24.7758 13.0832 0.0420799 13.1031 0.0420799 13.1031C0.0196575 13.1031 0.00146602 13.121 0.00144823 13.1431L1.43348e-08 14.8867C-1.86249e-05 14.9088 0.0181423 14.9266 0.0405638 14.9266L25.893 14.9058C28.1684 14.904 28.4342 18.2312 26.2832 18.7436C24.6731 19.1271 23.402 19.8266 21.7501 21.4527L16.5224 26.7448C16.5071 26.7603 16.5071 26.7849 16.5223 26.8004L17.6953 27.988C17.7113 28.0041 17.7378 28.004 17.7537 27.9877L31.9887 14.0433C32.0038 14.0278 32.0038 14.0033 31.9887 13.9879L17.7782 0.0121844C17.7623 -0.00403897 17.7358 -0.00406558 17.7198 0.0121294L16.5466 1.19982C16.5312 1.21538 16.5313 1.24013 16.5466 1.25559Z" fill="white"/>
+                                </svg>
+
+    section.isa-intro 
+        .container 
+            .isa-intro__header
+                .isa-intro__subtitle Đôi cánh cho hành trình
+                h2.isa-intro__title     
+                    span Hội nhập toàn cầu
+                    img.img2(src="./images/home/intro-img-title-2.jpg" alt="")
+                img.img1(src="./images/home/intro-img-title-1.jpg" alt="")
+                
+              
+            .isa-intro__body 
+                .isa-intro__body--desc Là một trong những trung tâm hàng đầu tại Việt Nam về lĩnh vực tư vấn du học, ISA tự hào là nơi chắp cánh cho ước mơ đến với các nền giáo dục hiện đại trên toàn thế giới và đồng hành cùng thế hệ trẻ Việt Nam trên hành trình khai mở tri thức, bồi đắp kỹ năng để gặt hái những thành công rực rỡ và xây dựng cho mình một sự nghiệp vững chắc nhất trong tương lai.
+                .isa-intro__body--cta
+                    a(href="#" class="rt-btn rt-btn-primary") Về chúng tôi
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="48" height="48" rx="24" fill="white"/>
+                        <path d="M32.6919 24.2871C32.6539 24.3791 32.599 24.462 32.53 24.531L28.53 28.531C28.384 28.677 28.192 28.751 28 28.751C27.808 28.751 27.616 28.678 27.47 28.531C27.177 28.238 27.177 27.763 27.47 27.47L30.1899 24.75H16C15.586 24.75 15.25 24.414 15.25 24C15.25 23.586 15.586 23.25 16 23.25H30.189L27.469 20.5301C27.176 20.2371 27.176 19.762 27.469 19.469C27.762 19.176 28.237 19.176 28.53 19.469L32.53 23.469C32.599 23.538 32.6539 23.6209 32.6919 23.7129C32.7679 23.8969 32.7679 24.1031 32.6919 24.2871Z" fill="#C33130"/>
+                        </svg>
+
+    include ../../components/WhyUS/why-us
+    
+    section.isa-prestigious-university
+        .container 
+            .isa-prestigious-university__header
+                .isa-prestigious-university__header--sub-title Học tập và nhận bằng từ
+                h2.isa-title Đại học Top 1% thế giới
+
+            .isa-prestigious-university__mobile
+                .isa-prestigious-university__nav
+                    ul(class="nav nav-tabs" id="UniversityTab" role="tablist")
+                        -
+                            items = [
+                                {
+                                    "img" : "america",
+                                    "title": "Mỹ"
+                                },
+                                {
+                                    "img" : "canada",
+                                    "title": "Canada"
+                                },
+                                {
+                                    "img" : "australia",
+                                    "title": "Úc"
+                                },
+                                {
+                                    "img" : "germany",
+                                    "title": "Đức"
+                                },
+                               
+                            ]
+                        each val, key in items
+                            li(class="nav-item" role="presentation")
+                                button(class=key === 0 ? 'nav-link active' : 'nav-link' id=`prestigious-university-tab-${key + 1}` data-bs-toggle="tab" data-bs-target=`#prestigious-university-tab-${key + 1}-content` type="button" role="tab" aria-controls=`prestigious-university-tab-${key + 1}-content` aria-selected=key === 0 ? 'true' : 'false') 
+                                    img(src="./images/home/flag-"+val.img+".svg" alt="")
+                                    span #{val.title}
+                      
+        .container-fluid.px-0
+            div(class="tab-content" id="UniversityTabContent")
+                -
+                    items = [1,2,3,4]
+                each val, key in items
+                    div(class=`tab-pane fade ${key === 0 ? 'show active' : 'false'} ` id=`prestigious-university-tab-${key + 1}-content` role="tabpanel" aria-labelledby=`prestigious-university-tab-${key + 1}`)
+                        .isa-prestigious-university__list.swiper.swiper-container
+                            .swiper-wrapper 
+                                -
+                                    slider = [
+                                        {
+                                            "img" : "2",
+                                            "title": "University of Wisconsin"
+                                        },
+                                        {
+                                            "img" : "3",
+                                            "title": "University of Wisconsin University of Wisconsin"
+                                        },
+                                        {
+                                            "img" : "1",
+                                            "title": "University of Wisconsin"
+                                        },
+                                        {
+                                            "img" : "3",
+                                            "title": "University of Wisconsin"
+                                        },
+                                    ]
+                                
+                                each val in slider
+                                    .swiper-slide
+                                        .isa-prestigious-university__scale(style = "background-image: url(../images/home/prestigious-university-"+val.img+".jpg); ")
+                                            .isa-prestigious-university__wrap 
+                                                .content-top
+                                                    .content-top__subtitle Trường đại học
+                                                    .content-top__title #{val.title}
+                                                    .content-top__cta 
+                                                        a(href="#" class="rt-btn rt-btn-primary") Xem chi tiết
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M20.5 4V9C20.5 9.276 20.276 9.5 20 9.5C19.724 9.5 19.5 9.276 19.5 9V5.20703L11.354 13.353C11.256 13.451 11.128 13.499 11 13.499C10.872 13.499 10.744 13.45 10.646 13.353C10.451 13.158 10.451 12.841 10.646 12.646L18.792 4.5H15C14.724 4.5 14.5 4.276 14.5 4C14.5 3.724 14.724 3.5 15 3.5H20C20.065 3.5 20.1299 3.51306 20.1909 3.53906C20.3139 3.59006 20.4109 3.68706 20.4619 3.81006C20.4869 3.87006 20.5 3.935 20.5 4ZM20 12.5C19.724 12.5 19.5 12.724 19.5 13V17C19.5 18.729 18.729 19.5 17 19.5H7C5.271 19.5 4.5 18.729 4.5 17V7C4.5 5.271 5.271 4.5 7 4.5H11C11.276 4.5 11.5 4.276 11.5 4C11.5 3.724 11.276 3.5 11 3.5H7C4.71 3.5 3.5 4.71 3.5 7V17C3.5 19.29 4.71 20.5 7 20.5H17C19.29 20.5 20.5 19.29 20.5 17V13C20.5 12.724 20.276 12.5 20 12.5Z" fill="white"/>
+                                                            </svg>
+                                                .content-bottom 
+                                                    .content-bottom__list 
+                                                        -
+                                                            items = [
+                                                                {
+                                                                    "img": "globe-earth",
+                                                                    "title": "Quốc gia",
+                                                                    "desc": "Mỹ"
+                                                                },
+                                                                {
+                                                                    "img": "building-tree",
+                                                                    "title": "Tỉnh bang/Thành phố",
+                                                                    "desc": "Alabama"
+                                                                },
+                                                                {
+                                                                    "img": "graduation-cap",
+                                                                    "title": "Bậc học",
+                                                                    "desc": "Đại học"
+                                                                },
+                                                                {
+                                                                    "img": "invoice",
+                                                                    "title": "Học phí tham khảo",
+                                                                    "desc": "$25,000 - $27,000/year"
+                                                                },
+                                                                
+                                                            ]
+                                                        
+                                                        each val, key in items
+                                                            .content-bottom__item 
+                                                                img.content-bottom__item--img(src="./images/home/icon-"+val.img+".svg", alt="")
+                                                                .content-bottom__item--title #{val.title}
+                                                                .content-bottom__item--desc #{val.desc}
+                                                
+                            .container.isa-slider-prestigious-university-container
+                                .isa-prestigious-university__pagination
+                                    .isa-prestigious-university__pagination--nav
+                                        span
+                                    .isa-prestigious-university__pagination--count
+                                        span.current 1
+                                        span.fraction-divider &nbsp;-&nbsp;
+                                        span.total 5
+                            //- .isa-prestigious-university__arrow    
+                            .isa-swiper-prev        
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="32" cy="32" r="32" fill="#FAF7F0"/>
+                                    <path d="M41.5 31.5L21.5 31.5" stroke="#212121" stroke-miterlimit="10"/>
+                                    <path d="M28.5 38.5L21.5 31.5L28.5 24.5" stroke="#212121" stroke-miterlimit="10" stroke-linecap="square"/>
+                                </svg>
+
+                            .isa-swiper-next
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="32" cy="32" r="32" fill="#FAF7F0"/>
+                                    <path d="M22.5 32.5H42.5" stroke="#212121" stroke-miterlimit="10"/>
+                                    <path d="M35.5 25.5L42.5 32.5L35.5 39.5" stroke="#212121" stroke-miterlimit="10" stroke-linecap="square"/>
+                                </svg>
+    
+    include ../../components/Form/form
+
+    include ../../components/StrategicPartnership/strategic-partnership
+
+    include ../../components/FeaturedEvents/featured-events
+
+    include ../../components/Gifts/gifts

@@ -1,0 +1,70 @@
+.rt-fordev
+    input#rt-fordev-toggler(type="checkbox")
+    .rt-fordev__inner
+        label.rt-fordev__header(for="rt-fordev-toggler") FOR DEV
+        .rt-fordev__body
+            .rt-fordev__title
+                .rt-custom-control
+                    input(type="checkbox" id="enable-admin-bar")
+                    label(for="enable-admin-bar") Admin bar
+            .rt-fordev__content
+                -
+                    devNav = [
+                        {
+                            "name": "Style Guide",
+                            "url": "./styleguide.html"
+                        },
+                        {
+                            "name": "General",
+                            "url": "./general.html"
+                        },
+                        {
+                            "name": "Home",
+                            "url": "./index.html"
+                        },
+                        {
+                            "name": "Archive",
+                            "url": "./archive.html"
+                        },
+                        {
+                            "name": "Schools",
+                            "url": "./schools.html"
+                        },
+                        {
+                            "name": "School Single",
+                            "url": "./school-single.html"
+                        },
+                        {
+                            "name": "Contact",
+                            "url": "./contact.html"
+                        },
+                        {
+                            "name": "Single",
+                            "url": "./single.html"
+                        },
+                        {
+                            "name": "Event",
+                            "url": "./event.html"
+                        },
+                        {
+                            "name": "Event Single",
+                            "url": "./event-single.html"
+                        },
+                        {
+                            "name": "About Us",
+                            "url": "./about-us.html"
+                        },
+                        {
+                            "name": "Thank You",
+                            "url": "./thank-you.html"
+                        },
+                        {
+                            "name": "404",
+                            "url": "./404.html"
+                        },
+                    ]
+                    
+                ul.rt-fordev-list
+                    each val in devNav
+                        li
+                            a(href= val["url"])= val["name"]

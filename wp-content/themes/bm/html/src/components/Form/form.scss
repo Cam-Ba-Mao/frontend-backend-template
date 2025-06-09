@@ -1,0 +1,258 @@
+.rt-form {
+    background-color: $blue;
+    background-image: url(../images/single/gradient-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+
+    &__inner {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        padding: 2.5rem 0 1.5rem; 
+
+        @include breakpoint-up(sm) {
+            padding: 2rem 0;
+        }
+
+        @include breakpoint-up(md) {
+            padding: 3rem 0;
+        }
+
+        @include breakpoint-up(lg) {
+            overflow: visible;
+            padding: 4rem 0;
+        }
+
+        @include breakpoint-up(xxl) {
+            padding: 5rem 0;
+        }
+
+        @include breakpoint-up(1600px) {
+            padding: 6rem 0;
+        }
+
+        &:after {
+            content: url('../images/single/globe.svg');
+            position: absolute;
+            top: 5%;
+            right: 0;
+        }
+
+        .img-wrapper {
+            position: relative;
+            text-align: center;
+            display: none;
+
+            @include breakpoint-up(lg) {
+                display: block;
+                max-width: 90%;
+            }
+
+            @include breakpoint-up(xl) {
+                max-width: 100%;
+            }
+
+            & > img {
+                width: 100%;
+                text-align: center;
+
+                @include breakpoint-up(md) {
+                    max-width: 27rem;
+                }
+
+                @include breakpoint-up(lg) {
+                    max-width: 30rem;
+                }
+
+                @include breakpoint-up(xxl) {
+                    max-width: 33.5rem;
+                }
+            }
+        }
+
+        .wpforms-container {
+            form {
+                margin-top: 2rem;
+
+                @include breakpoint-up(md) {
+                    margin-top: 2.5rem;
+                }
+
+                @include breakpoint-up(xxl) {
+                    margin-top: 3rem;
+                }
+            }
+        }
+    }
+
+    &__lines {
+        display: none;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+
+        @include breakpoint-up(md) {
+            display: block;
+        }
+
+        .line {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+
+            @include breakpoint-up(lg) {
+                display: block;
+            }
+
+            @include breakpoint-up(1700px) {
+                display: none;
+            }
+
+            img {
+                width: 100%;
+            }
+
+            &.line-pink {
+                @include breakpoint-up(lg) {
+                    max-width: 195px;
+                    top: 3rem;
+                    right: calc(100% - 3.75rem);
+                }
+
+                @include breakpoint-up(xxl) {
+                    max-width: 244px;
+                    right: calc(100% - 5.75rem);
+                }
+
+                @include breakpoint-up(1600px) {
+                    max-width: 290px;
+                    right: calc(100% - 5.75rem);
+                }
+            }
+
+            &.line-blue {
+                @include breakpoint-up(lg) {
+                    max-width: 490px;
+                    right: 10.75rem;
+                    top: 12.45rem;
+                }
+
+                @include breakpoint-up(xl) {
+                    right: 13.75rem;
+                    top: 12.75rem;
+                }
+
+                @include breakpoint-up(xxl) {
+                    max-width: 536px;
+                    right: 15.75rem;
+                    top: 14.45rem;
+                }
+
+                @include breakpoint-up(1600px) {
+                    max-width: 584px;
+                    right: 15.75rem;
+                    top: 14.45rem;
+                }
+            }
+
+            &.line-yellow {
+                display: none;
+                @include breakpoint-up(lg) {
+                    max-width: 76px;
+                    left: -3.75rem;
+                    top: 29.5rem;
+                }
+
+                @include breakpoint-up(xl) {
+                    max-width: 68px;
+                    left: -0.975rem;
+                    top: 31.45rem;
+                }
+
+                @include breakpoint-up(xxl) {
+                    left: 0rem;
+                    top: 34.75rem;
+                }
+
+                @include breakpoint-up(1600px) {
+                    left: 0.75rem;
+                    top: 35.75rem;
+                }
+            }
+
+            &.line-purple {
+                display: none;
+                @include breakpoint-up(md) {
+                    max-width: 109px;
+                    right: 4rem;
+                    top: 35.45rem;
+                }
+
+                @include breakpoint-up(lg) {
+                    max-width: 186px;
+                    right: 4rem;
+                    top: 35.45rem;
+                }
+
+                @include breakpoint-up(xl) {
+                    max-width: 148px;
+                    right: 6.5rem;
+                    top: 37.45rem;
+                }
+
+                @include breakpoint-up(xxl) {
+                    max-width: 114px;
+                    right: 8.375rem;
+                    top: 41.95rem;
+                }
+
+                @include breakpoint-up(1600px) {
+                    right: 8.375rem;
+                    top: 41.95rem;
+                    max-width: 136px;
+                }
+            }
+        }
+    }
+
+    &__form {
+        .rt-title, .rt-subtitle {
+            color: $white;
+            text-align: center;
+        }
+
+        .rt-title {
+            font-size: 1.725rem;
+            line-height: calc(54/48);
+            margin-bottom: 0.75rem;        
+            
+            @include breakpoint-up(sm) {
+                font-size: 2rem;
+            }
+
+            @include breakpoint-up(lg) {
+                font-size: 2.5rem;
+            }
+        }
+
+        .rt-subtitle {
+            font-family: $font-family-primary;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: calc(28/18);
+
+            @include breakpoint-up(md) {
+                font-size: 1.125rem;
+            }
+        }
+    }
+}

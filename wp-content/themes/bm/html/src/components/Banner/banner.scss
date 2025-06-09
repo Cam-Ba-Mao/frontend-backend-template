@@ -1,0 +1,123 @@
+:root {
+    --color: rgba(255, 255, 255, 0.5)
+}
+
+.rt-banner {
+    background-color: $color-040F49;
+    background-image: url('../images/gradient-bg-2.png'), url('../images/globe-full.png');
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, contain;
+    background-position: center center, right center;
+    padding: 6rem 0;
+
+    @include breakpoint-up(lg) {
+        padding: 7.25rem 0 7.125rem;
+    }
+
+    &__inner {
+        position: relative;
+
+        &--content {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            gap: 1rem;
+
+            .rt-title, .subtitle {
+                color: $white;
+            }
+
+            .rt-title {
+                font-family: $font-family-secondary;
+                font-size: 1.5rem;
+                font-weight: 700;
+                line-height: calc(72/56);
+                text-align: center;
+                margin-bottom: 0;
+
+                @include breakpoint-up(md) {
+                    font-size: 2.5rem;
+                }
+
+                @include breakpoint-up(xxl) {
+                    font-size: 3.5rem;
+                }
+            }
+
+            .subtitle {
+                text-align: center;
+                font-size: 1.125rem;
+                font-weight: 400;
+                line-height: calc(28/18);
+                text-align: center;
+                margin: 0 auto;
+
+                @include breakpoint-up(md) {
+                    max-width: 50rem;
+                }
+            }
+
+            .meta {
+                margin-top: 0.5rem;
+
+                .meta-item {
+                    display: inline-block;
+                    vertical-align: middle;
+
+                    &:not(:last-child) {
+                        &:after {
+                            content: "|";
+                            display: inline-block;
+                            color: $white;
+                            margin: 0 0.975rem;
+                        }
+                    }
+
+                    svg {
+                        margin-right: 0.5rem;
+                    }
+
+                    span {
+                        color: $white;
+                        font-size: 1rem;
+                        font-weight: 400;
+                        line-height: calc(24/16);
+                        text-align: left;
+                        vertical-align: middle;
+                    }
+                }
+            }
+        }
+    }
+
+    .rt-back {
+        padding-top: 0;
+        margin-bottom: 1rem;
+
+        @include breakpoint-up(sm) {
+            margin-bottom: 2rem;
+        }
+
+        @include breakpoint-up(lg) {
+            margin-bottom: 3rem;
+        }
+
+        @include breakpoint-up(xxl) {
+            margin-bottom: 4rem;
+        }
+
+        svg {
+            path {
+                fill: $white;
+            }
+        }
+
+        a {
+            color: var(--color);
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: calc(24/16);
+        }
+    }
+}

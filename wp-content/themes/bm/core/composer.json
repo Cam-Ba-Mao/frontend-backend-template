@@ -1,0 +1,15 @@
+{
+    "name": "bm/core",
+    "description": "A Small Tool Framework for Binh Nguyen",
+    "authors": [
+        {
+            "name": "BM",
+            "email": "cambamao98@gmail.vn"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "BM\\Core\\": "src/"
+        }
+    }
+}

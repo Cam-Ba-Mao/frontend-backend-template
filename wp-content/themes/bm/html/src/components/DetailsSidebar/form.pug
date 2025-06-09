@@ -1,0 +1,18 @@
+.rt-details__form
+    .rt-details__form--inner
+        .rt-details__form--head
+            h2.rt-subtitle NHẬN TƯ VẤN 1:1
+            .rt-details__head--border
+            h2.rt-title.rt-title__medium CÙNG CHUYÊN GIA
+
+        .rt-details__form--body
+            .wpforms-container.wpforms-container-full
+                form(action="./styleguide.html" class="wpforms-validate wpforms-form wpforms-ajax-form")
+                    .wpforms-field-container
+                        +wpf-input("wpf-input-1", "Họ và Tên Phụ huynh *", "Họ và Tên Phụ huynh", "", "wpf-icon wpf-icon-name")
+                        +wpf-input("wpf-input-2", "Họ và Tên Học sinh *", "Họ và Tên Học sinh","", "wpf-icon wpf-icon-name")
+                        +wpf-input("wpf-input-3", "Trường bạn đang học *", "Trường bạn đang học","", "wpf-icon wpf-icon-class")
+                        +wpf-input("wpf-input-4", "Email *", "Email", "", "wpf-icon wpf-icon-email")
+                        +wpf-input("wpf-input-5", "Số điện thoại *", "Số điện thoại", "", "wpf-icon wpf-icon-phone")
+                    .wpforms-submit-container
+                        button(type="submit" class="wpforms-submit is-icon" data-alt-text="Sending..." data-submit-text="Submit") GỬI THÔNG TIN

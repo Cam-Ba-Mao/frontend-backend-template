@@ -1,0 +1,509 @@
+.single-events {
+    min-height: calc(100vh - var(--gi));
+
+    .rt-event__banner {
+        background: $color-040F49 url('../images/thanks/bg.webp') no-repeat center center / cover;
+        position: relative;
+        padding-top: var(--mh);
+        padding-bottom: 3rem;
+        overflow: hidden;
+        color: $white;
+        display: grid;
+        align-items: center;
+
+        &--image {
+            overflow: hidden;
+            border-radius: 0.5rem;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .rt-event__information__content {
+            padding: 2rem 0;
+
+            @include breakpoint-up(lg) {
+                padding: 0;
+            }
+        }
+
+        .rt-event__information__info {
+            gap: 1.25rem;
+
+            @include breakpoint-up(sm) {
+                gap: 2rem;
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+
+            @include breakpoint-up(md) {
+                gap: 2rem 5rem;
+            }
+
+            @include breakpoint-up(lg) {
+                gap: 2rem 5rem;
+                margin: 2.5rem 0 0;
+            }
+
+            .rt-event__information__info--item {
+                gap: 1rem;
+                margin: 0;
+                padding: 0;
+
+                @include breakpoint-up(xl) {
+                    min-width: 30%;
+                }
+
+                &::after {
+                    display: none;
+                }
+
+                strong {
+                    line-height: 2rem;
+                }
+            }
+        }
+
+        .rt-event__information__info--icon {
+            padding: 0.75rem;
+            border-radius: 2rem;
+            background: rgba($white, 0.1);
+            width: 3rem;
+            height: 3rem;
+        }
+
+        .rt-event__information__group-cta {
+            margin: 2rem 0 1rem;
+
+            @include breakpoint-up(md) {
+                margin-top: 2.5rem;
+            }
+
+            .btn {
+                gap: 0.75rem;
+                height: 3.75rem;
+                font-weight: 400;
+                align-items: center;
+                padding: 1rem 3.5rem;
+                display: inline-flex;
+                vertical-align: middle;
+
+                &:hover {
+                    background: $color-B42928;
+                }
+            }
+        }
+
+        @include breakpoint-up(md) {
+            padding-bottom: 5rem;
+
+            &::after {
+                top: 0;
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background: url('../images/schools/banner-globe.png') no-repeat right top / 458px;
+            }
+        }
+
+        .rt-back {
+            padding: 0;
+            margin: 0.25rem 0 4rem;
+
+            a {
+                font-weight: 500;
+                color: rgba($white, 0.5);
+                transition: all 0.3s ease;
+
+                &:hover {
+                    color: $white !important;
+                }
+            }
+        }
+
+        .container {
+            z-index: 2;
+            position: relative;
+        }
+    }
+
+    .rt-event__loop {
+        padding: 3rem 0;
+
+        @include breakpoint-up(md) {
+            padding: 4rem 0;
+        }
+
+        & + .isa-featured-events {
+            padding-top: 1rem;
+
+            .isa-title {
+                margin-bottom: 2rem;
+
+                @include breakpoint-up(lg) {
+                    margin-bottom: 3.375rem;
+                }
+            }
+        }
+
+        &--item {
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+                padding-bottom: 2rem;
+                border-bottom: 1px solid $black-1;
+
+                @include breakpoint-up(md) {
+                    margin-bottom: 4rem;
+                    padding-bottom: 2.875rem;
+                }
+            }
+
+            .rt-block {
+                &__image {
+                    align-items: center;
+                    display: inline-flex;
+                    border-radius: 0.5rem;
+                    vertical-align: middle;
+                    justify-content: center;
+                    background: $color-040F49;
+                    margin-bottom: 1rem;
+                    padding: 0.75rem;
+
+                    @include breakpoint-up(md) {
+                        padding: 1rem;
+                    }
+                }
+
+                &__title {
+                    font-size: 2rem;
+                    font-weight: 600;
+                    margin-bottom: 1.25rem;
+                    line-height: calc(48 / 32);
+                }
+
+                &__editor {
+                    * {
+                        font-size: 1.125rem;
+                        line-height: calc(26 / 18);
+                        font-family: $font-family-primary;
+                    }
+
+                    p {
+                        &:not(:last-child) {
+                            margin-bottom: 1rem;
+                        }
+                    }
+
+                    ul {
+                        gap: 1rem;
+                        display: grid;
+                    }
+                }
+            }
+        }
+    }
+
+    .rt-event__information {
+        position: relative;
+        background-color: $blue;
+        z-index: 1;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        color: $white;
+
+        @include breakpoint-up(lg) {
+            padding-top: 3.125rem;
+            padding-bottom: 3.125rem;
+        }
+
+        &__overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba($black, 0.2);
+            z-index: 1;
+        }
+
+        &__wrap {
+            z-index: 2;
+            position: relative;
+            height: 100%;
+        }
+
+        &__image {
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+
+            picture {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__content {
+            padding-bottom: 3rem;
+
+            @include breakpoint-up(lg) {
+                padding-top: 3.125rem;
+                padding-bottom: 3.125rem;
+            }
+
+            .rt-title {
+                line-height: calc(64 / 48);
+                font-family: $font-family-secondary;
+                margin: 0 0 2rem;
+                font-size: 2rem;
+
+                @include breakpoint-up(md) {
+                    font-size: 2.5rem;
+                }
+
+                @include breakpoint-up(xxl) {
+                    font-size: 3rem;
+                }
+            }
+        }
+
+        &__group-cta {
+            gap: 1rem;
+            margin-top: 2rem;
+            display: inline-flex;
+            flex-direction: column;
+
+            @include breakpoint-up(sm) {
+                margin-top: 3rem;
+                flex-direction: row;
+            }
+
+            .rt-btn-outline-primary {
+                color: $white;
+                border: 1px solid rgba($white, 0.2);
+                border-radius: 2.5rem;
+                display: inline-flex;
+                align-items: center;
+                font-weight: 400;
+
+                svg {
+                    margin-right: 8px;
+                    margin-left: unset;
+                }
+
+                &:hover {
+                    background-color: transparent;
+                }
+
+                @include breakpoint-up(md) {
+                    &:first-child {
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
+
+        &__header {
+            margin-bottom: 1.5rem;
+
+            &--title {
+                margin: 0;
+                font-weight: 700;
+                text-align: center;
+                color: $white;
+                font-family: $font-family-secondary;
+                font-size: 1.75rem;
+                line-height: calc(36 / 28);
+
+                @include breakpoint-up(md) {
+                    font-size: 2rem;
+                    line-height: calc(48/32);
+                }
+            }
+        }
+
+        &__form {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 1.25rem;
+
+            @include breakpoint-up(md) {
+                padding: 2rem;
+            }
+
+            &--inner {
+
+                // WPform
+                div.wpforms-container-full {
+                    margin-top: 0;
+                    margin-bottom: 0;
+
+                    .wpforms-form {
+                        .wpforms-field-container {
+                            .wpforms-field {
+                                &:not(:last-child) {
+                                    margin-bottom: 1rem !important;
+                                }
+
+                                textarea,
+                                input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
+                                select:not([multiple="multiple"]) {
+                                    border-radius: 8px;
+                                    padding: 16px 24px 0;
+                                    background: $white;
+                                    border: none;
+                                    height: 3.375rem;
+                                    color: $black-1;
+                                }
+
+                                input:-webkit-autofill:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+                                input:-webkit-autofill:hover:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+                                input:-webkit-autofill:focus:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]),
+                                input:-webkit-autofill:active:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
+                                    -webkit-background-clip: text;
+                                    -webkit-text-fill-color: $black-1;
+                                    transition: background-color 5000s ease-in-out 0s;
+                                }
+
+                                &.wpforms-field-phone {
+                                    .iti__flag-container {
+                                        display: none;
+                                    }
+
+                                    .iti input[type=tel] {
+                                        padding: 16px 24px 0 !important;
+                                    }
+                                }
+
+                                &.wpforms-field-select {
+                                    background-color: #FAFAFA;
+                                    border-radius: 8px;
+
+                                    .wpforms-field-label {
+                                        display: none !important;
+                                    }
+
+                                    select {
+                                        padding: 12px 24px !important;
+                                    }
+                                }
+
+                                .wpforms-field-label {
+                                    color: $black-1;
+                                    padding: 0 24px !important;
+
+                                    &.freeze,
+                                    .has-select & {
+                                        top: 8px;
+                                        font-size: $form-float-label-font-size;
+                                        color: $black-1;
+                                    }
+                                }
+
+                                textarea {
+                                    padding: 23px 24px 24px;
+                                    height: 150px;
+                                }
+                            }
+
+                            .wpforms-field-label {
+                                position: absolute;
+                                top: ceil(calc(($input-height - $input-font-size)/2));
+                                left: 0;
+                                z-index: 1;
+                                padding: 0 $input-padding-x !important;
+                                font-size: $input-font-size;
+                                margin-bottom: 0;
+                                font-weight: 400;
+                                top: 1.125rem;
+                            }
+                        }
+
+                        .wpforms-submit-container {
+                            .wpforms-submit {
+                                &.is-icon {
+                                    border: 0 !important;
+                                    border-radius: 0.5rem !important;
+                                    min-height: 4rem;
+
+                                    &:hover {
+                                        color: $white !important;
+                                        background: $color-B42928 !important;
+
+                                        &::before {
+                                            content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_438_188)'%3E%3Cpath d='M3.60004 9.59939V14.4994C3.60004 15.1994 4.40004 15.4994 4.90004 14.9994L7.20004 12.2994L11.9 15.7994C12.3 16.0994 12.9 15.8994 13 15.3994L16 0.899389C16.1 0.299389 15.6 -0.100611 15 0.0993892L0.500041 5.89939C4.0561e-05 6.09939 -0.0999594 6.79939 0.300041 7.19939L1.90004 8.39939L6.50004 6.19939C6.90004 5.99939 7.20004 6.49939 6.90004 6.69939L3.60004 9.59939Z' fill='%23FFFFFF'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_438_188'%3E%3Crect width='16' height='16' fill='white' transform='translate(0 -0.000488281)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A") !important;
+                                        }
+                                    }
+                                }
+                            }
+
+                            padding-top: 2.25rem !important;
+
+                            .wpforms-submit-spinner {
+                                position: absolute;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                right: 8px;
+                                filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(17deg) brightness(102%) contrast(105%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &__info {
+            row-gap: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+
+            @include breakpoint-down(sm) {
+                row-gap: 1.5rem;
+                flex-direction: column;
+            }
+
+            &--item {
+                gap: 0.5rem;
+                position: relative;
+                display: inline-flex;
+                margin-right: 1.5rem;
+                align-items: flex-start;
+
+                &:nth-child(1) {
+                    padding-right: 1.625rem;
+                }
+
+                svg {
+                    flex-shrink: 0;
+                }
+
+                span {
+                    display: flex;
+                    line-height: 1.5rem;
+                }
+
+                @include breakpoint-up(lg) {
+                    &:nth-child(1) {
+                        &::after {
+                            content: "";
+                            width: 1px;
+                            height: 20px;
+                            border-radius: 1rem;
+                            background-color: rgba($white-2, 0.5);
+                            position: absolute;
+                            right: 0;
+                            top: 50%;
+                            transform: translateY(-50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

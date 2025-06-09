@@ -1,0 +1,151 @@
+extends ../../_core/layouts/layouts-default
+
+append vars
+    -bodyClass = "single-school is-transparent"
+    -typeMenu = ""
+
+block container
+    
+    section.rt-school__banner
+                .container
+                    .row
+                        .col-lg-8
+                            a.rt-school__feature.rt-light-gallery(href="#" data-sources=`[{ "src": "https://www.youtube.com/watch?v=Zv11L-ZfrSg",  "thumb" : "./images/schools/post1-image.png", "subHtml" : "" }]`)
+                                .post-images
+                                    img.school-img.lazy(data-src="./images/schools/post1-image.png" alt="")
+                                    img.school-logo.lazy(data-src="./images/schools/post1-small.svg" alt="")
+                                button.post-video.btn-play(type="button")
+
+                            ul.rt-school__metadata
+                                li
+                                    img.rt-school__metadata--image.lazy(data-src="./images/schools/globe-earth.svg" alt="globe-earth")
+                                    strong.rt-school__metadata--label Quốc gia
+                                    span.rt-school__metadata--value Canada
+                                li
+                                    img.rt-school__metadata--image.lazy(data-src="./images/schools/building-tree.svg" alt="building-tree")
+                                    strong.rt-school__metadata--label Tỉnh bang/Thành phố
+                                    span.rt-school__metadata--value Ontario
+                                li
+                                    img.rt-school__metadata--image.lazy(data-src="./images/schools/graduation-cap.svg" alt="graduation-cap")
+                                    strong.rt-school__metadata--label Bậc học
+                                    span.rt-school__metadata--value THPT, Cao đẳng
+                                li
+                                    img.rt-school__metadata--image.lazy(data-src="./images/schools/invoice.svg" alt="invoice")
+                                    strong.rt-school__metadata--label Học phí tham khảo
+                                    span.rt-school__metadata--value 30,000$
+                        .col-lg-4
+                            .rt-school__detail
+                                h1.rt-title Trường Trung học Fort Erie International Academy 
+                                ul.post-info
+                                    li
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M20.5 9.5C20.5 14.4 12.5 22.5 12.5 22.5C12.5 22.5 4.5 14.4 4.5 9.5C4.5 4.4 8.6 1.5 12.5 1.5C16.4 1.5 20.5 4.4 20.5 9.5Z" stroke="white" stroke-miterlimit="10" stroke-linecap="square"/>
+                                            <path d="M12.5 12.5C14.1569 12.5 15.5 11.1569 15.5 9.5C15.5 7.84315 14.1569 6.5 12.5 6.5C10.8431 6.5 9.5 7.84315 9.5 9.5C9.5 11.1569 10.8431 12.5 12.5 12.5Z" stroke="white" stroke-miterlimit="10" stroke-linecap="square"/>
+                                        </svg>
+                                        span 845 Sherbrooke Street West, Montréal, Québec
+                                    li
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M12 1.49622C6.21 1.49622 1.5 6.19439 1.5 11.9699C1.5 17.7453 6.21 22.4435 12 22.4435C17.79 22.4435 22.5 17.7453 22.5 11.9699C22.5 6.19439 17.79 1.49622 12 1.49622ZM21.475 11.4711H16.923C16.827 8.51455 15.884 5.48019 14.211 2.76402C18.227 3.72361 21.252 7.22979 21.475 11.4711ZM12.87 2.5376C14.747 5.28269 15.817 8.42278 15.923 11.4711H8.077C8.183 8.42278 9.25301 5.28269 11.13 2.5376C11.417 2.51167 11.706 2.49371 12 2.49371C12.294 2.49371 12.583 2.51167 12.87 2.5376ZM9.789 2.76402C8.117 5.48118 7.174 8.51555 7.077 11.4711H2.52499C2.74799 7.22979 5.773 3.72361 9.789 2.76402ZM2.52499 12.4686H7.077C7.173 15.4252 8.116 18.4595 9.789 21.1757C5.773 20.2161 2.74799 16.7099 2.52499 12.4686ZM11.13 21.4021C9.25301 18.657 8.183 15.5169 8.077 12.4686H15.923C15.817 15.5169 14.747 18.657 12.87 21.4021C12.583 21.428 12.294 21.446 12 21.446C11.706 21.446 11.417 21.428 11.13 21.4021ZM14.211 21.1757C15.883 18.4585 16.826 15.4242 16.923 12.4686H21.475C21.252 16.7099 18.227 20.2161 14.211 21.1757Z" fill="white"/>
+                                        </svg>
+                                        a(href="" target="_blank") www.feia.ca
+                                .post-excerpt
+                                    span Fort Erie International Academy (FEIA) là một trong những trường Trung học tư thục nội trú lớn nhất ở Canada, với diện tích lên đến hơn 80.000 m2, bao gồm các tiện nghi đa dạng như các tòa nhà dạy học, ký túc xá, phòng lab.
+
+                                .post-galleries.rt-light-gallery-list
+                                    .post-gallery.rt-light-gallery-item 
+                                        img.lazy(data-src="./images/schools/post1-large.png" alt="gallery-1")
+                                    .post-gallery.rt-light-gallery-item
+                                        img.lazy(data-src="./images/schools/post2-large.png" alt="gallery-2")
+                                    .post-gallery.rt-light-gallery-item
+                                        img.lazy(data-src="./images/schools/post3-large.png" alt="gallery-3")
+                                    .post-gallery.rt-light-gallery-item
+                                        img.lazy(data-src="./images/schools/post4-large.png" alt="gallery-4")
+
+                                .rt-cta__button
+                                    a.btn.btn-primary(href="#")
+                                        span Đăng ký tư vấn
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M11.5 19C11.5 19.276 11.276 19.5 11 19.5H5C2.71 19.5 1.5 18.29 1.5 16V7C1.5 4.71 2.71 3.5 5 3.5H17C19.29 3.5 20.5 4.71 20.5 7V10C20.5 10.276 20.276 10.5 20 10.5C19.724 10.5 19.5 10.276 19.5 10V7C19.5 5.271 18.729 4.5 17 4.5H5C3.271 4.5 2.5 5.271 2.5 7V16C2.5 17.729 3.271 18.5 5 18.5H11C11.276 18.5 11.5 18.724 11.5 19ZM16.9041 7.70599C16.7411 7.48199 16.4271 7.43399 16.2061 7.59599L11.2939 11.168C11.1179 11.296 10.8821 11.295 10.7061 11.168L5.79395 7.59599C5.57095 7.43399 5.25895 7.48199 5.09595 7.70599C4.93395 7.92899 4.98305 8.24201 5.20605 8.40401L10.1179 11.976C10.3819 12.168 10.69 12.264 11 12.264C11.309 12.264 11.6181 12.168 11.8821 11.976L16.7939 8.40401C17.0179 8.24201 17.0661 7.92899 16.9041 7.70599ZM22.5 14.881C22.499 15.253 22.3541 15.601 22.0911 15.863L16.575 21.354C16.481 21.447 16.3539 21.5 16.2219 21.5H14C13.724 21.5 13.5 21.276 13.5 21V18.778C13.5 18.646 13.553 18.519 13.646 18.425L19.137 12.909C19.399 12.645 19.7479 12.5 20.1189 12.5C20.1199 12.5 20.1201 12.5 20.1211 12.5C20.4911 12.5 20.8401 12.645 21.1021 12.907L22.092 13.898C22.355 14.16 22.5 14.51 22.5 14.881ZM19.864 16.67L18.3311 15.136L14.5 18.984V20.5H16.0171L19.864 16.67ZM21.5 14.88C21.5 14.776 21.459 14.678 21.386 14.605L20.396 13.614C20.323 13.54 20.2251 13.5 20.1221 13.5H20.1211C20.0171 13.5 19.9199 13.541 19.8469 13.614L19.0381 14.427L20.574 15.964L21.387 15.154C21.459 15.081 21.5 14.984 21.5 14.88Z" fill="white"/>
+                                        </svg>
+
+    
+    section.rt-school__content.rt-details
+        .container
+            .row
+                .col-lg-4
+                    .rt-blog__sidebar.d-none.d-lg-block
+                        include ../../components/DetailsSidebar/toc
+                        include ../../components/DetailsSidebar/form
+                .col-lg-8
+                    .rt-details__content
+                        .d-block.d-lg-none
+                            include ../../components/DetailsSidebar/toc
+
+                        .post-content
+                            h2 Giới thiệu trường Fort Erie International Academy
+                            p
+                                img.lazy(data-src="./images/blog/post-image.jpg" width="100%" alt="")
+                            h3#heading_01 Administrative Team
+                            p Ever dialled a number just to get an automated voice recording on the other end that leads nowhere? Not at Virtual High School! Our administrative team offers multiple ways for you to get in touch so that we can answer your questions promptly and knowledgeably:
+                            ul
+                                li Give us a call during office hours or leave us a voicemail. We've even got a toll-free number for added convenience if you're calling from outside of Canada.
+                                li Send an email to information@virtualhighschool.com and we'll get you directed to the appropriate department.
+                                li Message us on our website's live chat feature to get speedy replies.
+                                li Hit us up on our social media platforms: Facebook, Instagram, LinkedIn, and Twitter.
+                                li If you're ever visiting the Bayfield area, feel free to pop by the school to say hello. We love meeting our students in person!
+                            p
+                                strong What kinds of things can our administrative team help you with? We're glad you asked!
+                            ul 
+                                li Fast course enrolment so you can begin within 24 hours
+                                li Questions about our 70+ Ontario curriculum courses (including Fast Track and Upgrade options)
+                                li Account troubleshooting and technical support
+                                li VHS bursary and scholarship application assistance
+                                li Communication with your high school or post-secondary institution
+                                li Prompt midterm and final report processing
+                                li Final exam preparation and organization
+                            
+                            h3#heading_02 Guidance Services
+                            p It can be tricky to navigate your way through high school without skilled experts to help you along the way. Luckily, our guidance advisors are talented information wizards (still human, though) who know the Ontario Ministry of Education policies inside and out. Check out all of the guidance benefits you can receive at TOHS:
+                            ul
+                                li Give us a call during office hours or leave us a voicemail. We've even got a toll-free number for added convenience if you're calling from outside of Canada.
+                                li Send an email to information@virtualhighschool.com and we'll get you directed to the appropriate department.
+                                li Message us on our website's live chat feature to get speedy replies.
+                                li Hit us up on our social media platforms: Facebook, Instagram, LinkedIn, and Twitter.
+                                li If you're ever visiting the Bayfield area, feel free to pop by the school to say hello. We love meeting our students in person!
+
+                            p
+                                img.lazy(data-src="./images/blog/post-image.jpg" width="100%" alt="")
+                            .wp-caption-text Many different activities encouraged them to explore and discover where their interests lie.
+
+                            h3#heading_03 Teachers
+                            p The teachers at Virtual High School are definitely humans on the surface, but we suspect they might be superheroes too! Our world-class teachers are all certified and exceptionally talented in their subject areas. What do TOHS teachers do?
+                            ul 
+                                li Answer your questions and explain the trickiest of concepts.
+                                li Grade your assessments with speed and precision. (Psst—try a Fast Track course for 2-day grading!)
+                                li Provide detailed feedback so that you can improve.
+                                li Help you reach your post-secondary application deadlines.
+
+                            blockquote.wp-block-quote
+                                p As educators and cool people, we believe in helping each other whenever we can. Your success is our priority, and sometimes you may find that you need a little extra support in your courses. Enter our Student Academic Support team!
+
+                            h3#heading_04 Student Academic Support
+                            p Ever dialled a number just to get an automated voice recording on the other end that leads nowhere? Not at Virtual High School! Our administrative team offers multiple ways for you to get in touch so that we can answer your questions promptly and knowledgeably:
+                            ul
+                                li Give us a call during office hours or leave us a voicemail. We've even got a toll-free number for added convenience if you're calling from outside of Canada.
+                                li Send an email to information@virtualhighschool.com and we'll get you directed to the appropriate department.
+                                li Message us on our website's live chat feature to get speedy replies.
+                                li Hit us up on our social media platforms: Facebook, Instagram, LinkedIn, and Twitter.
+                                li If you're ever visiting the Bayfield area, feel free to pop by the school to say hello. We love meeting our students in person!
+                            
+                            h3#heading_05 School Community
+                            p We're also dedicated to ensuring that our students can make new friends and pursue different hobbies no matter where they are in the world! Our community activities aim to get students chatting about the people, places, and interests that make up their lives outside of the classroom.
+                            ul
+                                li Learn about diverse cultures at a Meet-and-Greet.
+                                li Join the student book club.
+                                li Participate in our social media photo series and pop quizzes.
+                                li Sit in on sample first-year lectures from some of Canada's top universities.
+                                li Test your knowledge at our trivia competitions.
+                                li Attend virtual field trips and presentations at art galleries and museums.
+
+                    .col-12.d-block.d-lg-none
+                        include ../../components/DetailsSidebar/form

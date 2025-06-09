@@ -1,0 +1,81 @@
+body {
+    &.page-template-thank-you {
+        .rt-gifts {
+            padding-top: 0; 
+        }
+        
+    }
+}
+
+.rt-thank-you {
+    background: $color-040F49 url('../images/thanks/bg.webp') no-repeat center center / cover;
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    padding-top: var(--mh);
+    padding-bottom: 2rem;
+    overflow: hidden;
+
+    @include breakpoint-up(lg) {
+        min-height: calc(100vh - var(--gi));
+    }
+
+    @include breakpoint-up(sm) {
+        &::after {
+            top: 0;
+            right: 0;
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: url('../images/thanks/globe.png') no-repeat right bottom -30px / calc(100vh / 2);
+        }
+    }    
+    
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        color: $white;
+    }
+
+    &__image {
+        margin-bottom: 2.75rem;
+    }
+
+    &__title {
+        margin-bottom: 1rem;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: calc(48/36);
+        font-family: $font-family-secondary;
+
+        @include breakpoint-up(lg) {
+            font-size: 36px;
+        }
+    }
+
+    &__desc {
+        max-width: 856px;
+        font-family: $font-family-secondary;
+
+        @include breakpoint-up(lg) {           
+            font-size: 18px;
+        }
+    }
+
+    &__cta {
+        margin-top: 3rem;
+
+        .rt-btn {         
+            border-radius: 8px;
+            padding: 1.25rem 4.5rem;
+        }
+    }
+}
