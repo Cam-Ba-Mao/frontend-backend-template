@@ -13,6 +13,8 @@ node_modules/
 .vscode/
 sucuri-*.php
 *_installer.php
+Search-Replace-DB/
+wordfence-waf.php
 
 # wordpress specific
 wp-config.php
@@ -25,6 +27,7 @@ wp-content/advanced-cache.php
 wp-content/wp-cache-config.php
 wp-content/cache/*
 wp-content/cache/supercache/*
+wp-content/wflogs/*
 
 # wpengine specific
 .smushit-status
@@ -75,10 +78,14 @@ wp-content/languages
 /wp-content/themes/twentyseventeen
 /wp-content/themes/twentysixteen
 /wp-content/themes/twentynineteen
+/wp-content/themes/twentytwentyone
+/wp-content/themes/twentytwentythree
+/wp-content/themes/twentyfourteen
+/wp-content/themes/twentytwentytwo
 
 #Backup
 wp-content/backups-dup-pro/
-
+/backups-dup-pro
 /wp-snapshots
 # large/disallowed file types
 # a CDN should be used for these
