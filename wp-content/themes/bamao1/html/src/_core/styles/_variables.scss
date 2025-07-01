@@ -1,0 +1,173 @@
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+
+// Breakpoint
+$breakpoints: (
+    xs: 0,
+    ssm: 360px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px,
+    xxxl: 2000px,
+) !default;
+
+// Typography
+$font-family-primary: 'Quicksand', Arial, Helvetica, sans-serif !default;
+$font-family-secondary: 'Quicksand', Arial, Helvetica, sans-serif !default;
+
+// Colors
+$gray-100: #666666 !default;
+$gray-200: #828282 !default;
+$gray-300: #ABABAB !default;
+$gray-400: #C4C4C4 !default;
+$gray-500: #E1E1E1 !default;
+$gray-600: #EDEDEE !default;
+$gray-700: #87898E !default;
+$gray-800: #F9F9FA !default;
+$gray-900: #8A8F9B !default;
+
+$white: #ffffff !default;
+$white-2: #F3F3F4!default;
+$white-1:#DFDFDF ;
+$white-3: #F4F7F6;
+
+$black: #000000 !default;
+$black-1: #202121 !default;
+$black-2: #2C3A3A !default;
+$black-3: #3D3F46 !default;
+$black-4: #686F7A !default;
+$black-5: #3E3F47 !default;
+$black-6: #6A6C72 !default;
+$black-7: #3D3F47 !default;
+$black-8: #0A1A2B !default;
+
+$red: #C6363B;
+$orange: #FD5B31;
+$orange-1: #FF6333;
+
+$blue: #002350;
+
+$font-weight-100: 100;
+$font-weight-200: 200;
+$font-weight-300: 300;
+$font-weight-400: 400;
+$font-weight-500: 500;
+$font-weight-600: 600;
+$font-weight-700: 700;
+
+$primary: $black !default;
+$secondary: $gray-600 !default;
+$danger: $red !default;
+$body-color: $black-1 !default;
+$placeholder-color: $red !default;
+
+// Forms
+$input-font-size: 16px !default;
+$input-color: $body-color !default;
+$input-background-color: $white-2 !default;
+$input-placeholder-color: rgba(61, 63, 71, 0.6) !default;
+$input-height: 50px !default;
+$input-border-radius: 4px !default;
+$input-border-color: $white-2 !default;
+$input-border-color-focus: $white-2!default;
+$input-border-width: thin !default;
+$input-padding-y: 4px !default;
+$input-padding-x: 16px !default;
+$textarea-height: 150px !default;
+
+$label-font-size: 14px !default;
+$label-color: $black-2 !default;
+$label-spacing: 0 !default;
+$label-font-weight: 500 !default;
+
+$form-row-spacing: 16px !default;
+$form-col-spacing: 20px !default;
+
+$custom-control-size: 14px !default;
+$custom-control-dot-size: 8px !default;
+$custom-control-gap: 10px !default;
+$custom-control-font-size: 14px !default;
+$custom-control-font-weight: normal !default;
+$custom-control-line-height: 1.4 !default;
+$custom-control-border-color: $body-color !default;
+$custom-control-border-color-active: $body-color !default;
+$custom-control-top: 2px !default;
+
+$select-background-color: $gray-600 !default;
+$select-option-padding-y: 8px !default;
+$select-option-padding-x: 16px !default;
+$select-option-font-size: 14px !default;
+$select-option-background-color: $white !default;
+$select-option-background-color-hover: $gray-400 !default;
+$select-arrow-width: 11px !default;
+$select-arrow-spacing: 16px !default;
+$select-arrow-icon: "data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5.5 5.5L10 1' stroke='black'/%3E%3C/svg%3E%0A" !default;
+$select-dropdown-offset: 0;
+
+$validate-message-color: $danger !default;
+$validate-message-font-size: 10px !default;
+$validate-message-spacing: 6px !default;
+
+$custom-switcher-slider-width: 50px !default;
+$custom-switcher-slider-height: 16px !default;
+$custom-switcher-slider-color: $gray-400 !default;
+$custom-switcher-slider-color-checked: $gray-500 !default;
+$custom-switcher-slider-cursor-size: 22px !default;
+$custom-switcher-slider-cursor-color: #424242 !default;
+$custom-switcher-slider-cursor-color-checked: $red !default;
+$custom-switcher-slider-label-font-size: 8px !default;
+$custom-switcher-slider-label-color: rgba($color: #000000, $alpha: 0.5) !default;
+$custom-switcher-slider-label-spacing: 2px !default;
+$custom-switcher-slider-gap: ($custom-switcher-slider-cursor-size - $custom-switcher-slider-height)/2 !default;
+$custom-switcher-label-font-size: 14px !default;
+$custom-switcher-label-gap: 10px !default;
+
+// Form float label
+$form-float: true !default;
+$form-float-label-font-size: 10px !default;
+$form-float-input-padding-top: 16px !default;
+
+// Button
+
+
+$button-color: $white !default;
+$button-background-color: $red;
+$button-background-color-hover: $red;
+$button-disabled-background-color: $gray-400;
+$button-disabled-background-color-hover: $gray-400;
+$button-border-radius: 4px !default;
+
+$button-font-size: 16px !default;
+$button-font-weight: 500 !default;
+$button-line-height: 1.5 !default;
+
+$button-primary-color: $white !default;
+$button-primary-border-color: $red !default;
+$button-primary-background-color: $red !default;
+$button-primary-color-hover: $red;
+$button-primary-background-color-hover: transparent;
+$button-primary-border-color-hover: $red !default;
+
+$button-secondary-color: $white !default;
+$button-secondary-border-color: $black-1 !default;
+$button-secondary-background-color: $black-1 !default;
+$button-secondary-color-hover:$black-1 !default;
+$button-secondary-background-color-hover: transparent;
+$button-secondary-border-color-hover: $black-1 !default;
+
+$button-outline-color:$black-2 !default;
+$button-outline-border-color: $black-2 !default;
+$button-outline-background-color: transparent !default;
+$button-outline-color-hover: $white !default;
+$button-outline-background-color-hover: $black-2 !default;
+$button-outline-border-color-hover:$black-2 !default;
+
+//Link
+$link-color: $red !default;
+$link-color-hover: $red !default;
+$link-disabled-color: $gray-400;
+$link-disabled-color-hover: $gray-400;

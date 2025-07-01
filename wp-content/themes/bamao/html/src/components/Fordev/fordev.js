@@ -10,7 +10,7 @@
                 $('html').removeClass('admin-bar-html');
                 $('body').removeClass('admin-bar');
                 $('#wpadminbar').remove();
-                $('.js-iedg-navbar').css('margin-top', '');
+                $('.js-bm-navbar').css('margin-top', '');
             }
 
             if ($(window).width() <= 600) {
@@ -23,11 +23,11 @@
             function DemoNavbarMove() {
                 var top = $(window).scrollTop(),
                     offsetTop = 46 - top > 0 ? 46 - top : 0;
-                if ($('#wpadminbar').length && $('.js-iedg-navbar').length) {
-                    $('.js-iedg-navbar').css('margin-top', offsetTop);
+                if ($('#wpadminbar').length && $('.js-bm-navbar').length) {
+                    $('.js-bm-navbar').css('margin-top', offsetTop);
                 }
                 else {
-                    $('.js-iedg-navbar').css('margin-top', '');
+                    $('.js-bm-navbar').css('margin-top', '');
                 }
             }
         });

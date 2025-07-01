@@ -1,7 +1,10 @@
-<?php get_header(); ?>
-	<section class="iedg-404">
-		<div class="container"> 
-			<div class="iedg-404__image"> <img class="lazy" data-src="<?= get_template_directory_uri(); ?>/html/dist/images/404/404.svg" alt="404"></div>
-		</div>
-	</section>
-<?php get_footer(); ?>
+<?php
+/**
+ * The template for displaying 404 pages (not found)
+ * @package Iedg
+ */ 
+get_header(); 
+
+    do_action('rt_content_404_page', get_the_ID()); 
+
+get_footer();

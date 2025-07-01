@@ -1,0 +1,76 @@
+header(class="iedg-header "+ (typeMenu && typeMenu) +"")
+    nav.iedg-navbar.js-iedg-navbar.is-active
+        .container
+            .iedg-header-navbar-content
+                a.iedg-navbar-brand.d-lg-none(href="./index.html")
+                    img.iedg-navbar-brand__black.lazy(data-src="./images/logo.png" alt="")
+                    
+
+                .iedg-navbar-hamburger
+                    .iedg-nav-language-mobile.d-lg-none 
+                        a(href="#" id="iedg-language-mobile")
+                            img.lazy(data-src="./images/language-vi.png" alt="")
+                            span.iedg-submenu-expand
+                                +icon('arrow-menu')
+
+                        ul.sub-menu
+                            <li class="lang-item lang-item-2 lang-item-vi lang-item-first">
+                                <a lang="vi" hreflang="vi" href="#">Tiếng Việt</a>
+                            </li>
+
+                            <li class="lang-item lang-item-5 lang-item-en current-lang">
+                                <a lang="en-US" hreflang="en-US" href="#">English</a>
+                            </li>
+
+                    button(class="iedg-navbar-toggler" type="button")
+                            .iedg-icon-toggler
+                                span
+                    
+
+            .iedg-navbar-collapse
+                .container
+                    .iedg-navbar-wrap
+                        a(href="./index.html" class="iedg-navbar-brand d-none d-lg-block")
+                            img.iedg-navbar-brand__black.lazy(data-src="./images/logo.png" alt="")
+                        
+                        ul.iedg-navbar-nav
+                            li.iedg-navbar-nav__item 
+                                a(href="#") Menu 1
+                                ul.sub-menu
+                                    li.iedg-navbar-nav__item 
+                                        a(href="#") Lịch khai giảng
+                                    li.iedg-navbar-nav__item 
+                                        a(href="#") Giới thiệu khoá học
+                                    li.iedg-navbar-nav__item 
+                                        a(href="#") Các khóa học
+
+                            li.iedg-navbar-nav__item 
+                                a(href="#") Menu 2
+
+                            li.iedg-navbar-nav__item 
+                                a(href="#") Menu 3
+
+                            li.iedg-navbar-nav__item 
+                                a(href="#") Menu 4
+
+                            li.iedg-navbar-nav__item 
+                                a(href="#") Menu 5
+
+                            li.iedg-navbar-nav__item.iedg-nav-icon.iedg-nav-none-border.iedg-nav-language 
+                                a(href="#")
+                                    img.lazy(data-src="./images/language-vi.png" alt="")
+
+                                    span.iedg-submenu-expand
+                                       +icon('arrow-menu')
+
+                                ul.sub-menu
+                                    <li class="lang-item lang-item-2 lang-item-vi lang-item-first">
+                                        <a lang="vi" hreflang="vi" href="#">Tiếng Việt</a>
+                                    </li>
+
+                                    <li class="lang-item lang-item-5 lang-item-en current-lang">
+                                        <a lang="en-US" hreflang="en-US" href="#">English</a>
+                                    </li>
+                         
+                            li.iedg-navbar-nav__item.iedg-navbar-nav__item--login 
+                                a(href="#register" class="iedg-btn iedg-btn-outline-primary") Đăng ký ngay

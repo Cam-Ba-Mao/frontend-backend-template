@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Title</title>
+        <!-- Favicon-->
+        <link rel="icon" href="./images/favicon.png">
+        <!-- Bootstrap-->
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <!-- Plugins style-->
+        <link rel="stylesheet" href="./css/bundle.min.css">
+        <!-- Template syle-->
+        <link rel="stylesheet" href="./css/main.css">
+        <!-- Admin bar demo ( Not include )-->
+        <style>
+            .admin-bar-html {
+                margin-top: 32px !important;
+            }
+            
+            @media screen and (max-width: 782px) {
+                .admin-bar-html {
+                    margin-top: 46px !important;
+                }
+            }
+            
+            #wpadminbar {
+                direction: ltr;
+                color: #ccc;
+                font-size: 13px;
+                font-weight: 400;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+                height: 32px;
+                line-height: 32px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                min-width: 600px;
+                z-index: 99999;
+                background: #23282d;
+                padding: 0 15px;
+            }
+            
+            @media screen and (max-width: 782px) {
+                html #wpadminbar {
+                    height: 46px;
+                    line-height: 46px;
+                    min-width: 240px;
+                }
+            }
+            
+            @media screen and (max-width: 600px) {
+                #wpadminbar {
+                    position: absolute;
+                }
+            }
+            
+        </style>
+    </head>
+    <body class="page-template-thankyou is-transparent">
+        <div class="rt-container">
+            <!-- START HEADER-->
+            <header class="bm-header"></header>
+            <!-- CLOSE HEADER-->
+            <!-- START CONTENT-->
+            <main class="rt-content">
+                <section class="rt-thankyou">
+                    <div class="container"></div>
+                </section>
+            </main>
+            <!-- CLOSE CONTENT-->
+            <!-- START FOOTER-->
+            <footer class="bm-footer"></footer>
+            <!-- CLOSE FOOTER-->
+        </div>
+        <!-- ForDev-->
+        <div class="rt-fordev">
+            <input id="rt-fordev-toggler" type="checkbox">
+            <div class="rt-fordev__inner">
+                <label class="rt-fordev__header" for="rt-fordev-toggler">FOR DEV</label>
+                <div class="rt-fordev__body">
+                    <div class="rt-fordev__title">
+                        <div class="rt-custom-control">
+                            <input type="checkbox" id="enable-admin-bar">
+                            <label for="enable-admin-bar">Admin bar</label>
+                        </div>
+                    </div>
+                    <div class="rt-fordev__content">
+                        <ul class="rt-fordev-list">
+                            <li><a href="./styleguide.html">Guide</a></li>
+                            <li><a href="./404.html">404</a></li>
+                            <li><a href="./thankyou.html">Thank You</a></li>
+                            <li><a href="./general.html">General</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Jquery-->
+        <script src="./js/jquery.min.js">       </script>
+        <!-- Bootstrap-->
+        <script src="./js/popper.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <!-- Plugins script-->
+        <script src="./js/bundle.min.js"></script>
+        <!-- Template script-->
+        <script src="./js/scripts.min.js"></script>
+    </body>
+</html>

@@ -26,8 +26,7 @@ $icon-spacing: 5px;
         background-size: $icon-loading-size auto;
         vertical-align: middle;
         position: absolute;
-        top: calc(50% - #{$icon-loading-size / 2});
-        // left: calc(50% - #{$icon-loading-size / 2});
+        top: calc(50% - #{calc($icon-loading-size / 2)});
         left: calc(100% - 1.5rem);
         mix-blend-mode: difference;
     }
@@ -66,7 +65,7 @@ $icon-spacing: 5px;
         height: $icon-loading-overlay-size;
         background-size: $icon-loading-overlay-size auto;
         z-index: 2;
-        left: calc(50% - #{$icon-loading-overlay-size / 2});
+        left: calc(50% - #{calc($icon-loading-overlay-size / 2)});
     }
     
 }

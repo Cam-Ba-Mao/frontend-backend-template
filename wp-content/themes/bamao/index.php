@@ -1,11 +1,18 @@
 <?php
-    $data['categories'] = getCategories('term_order', 'ASC', 'false');
-    $data['post'] = getCar();
-	// dd($data['post'] );
-?>
+/**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package Iedg
+ */
 
-<?php get_header(); ?>
-<?php foreach($data['categories'] as $cat ): ?>
-    <a href="<?= get_term_link($cat); ?>"><?= $cat->name; ?></a>
-<?php endforeach; ?>
-<?php get_footer(); ?>
+get_header();
+?>
+<?php
+get_footer();

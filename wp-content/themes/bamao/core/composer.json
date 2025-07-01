@@ -1,0 +1,15 @@
+{
+    "name": "rt/core",
+    "description": "A Small Tool Framework for Binh Nguyen",
+    "authors": [
+        {
+            "name": "RT",
+            "email": "binhnguyen@indochinagroup.edu.vn"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "RT\\Core\\": "src/"
+        }
+    }
+}

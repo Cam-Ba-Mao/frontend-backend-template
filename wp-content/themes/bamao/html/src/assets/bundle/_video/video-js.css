@@ -887,7 +887,7 @@ body.vjs-full-window {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   padding: 6px 8px 8px 8px;
-  pointer-eiedgts: none;
+  pointer-events: none;
   position: absolute;
   top: -3.4em;
   visibility: hidden;
@@ -1252,7 +1252,7 @@ body.vjs-full-window {
   left: 0;
   right: 0;
   top: 0;
-  pointer-eiedgts: none;
+  pointer-events: none;
 }
 
 .video-js.vjs-user-inactive.vjs-playing .vjs-text-track-display {
@@ -1303,7 +1303,7 @@ video::-webkit-media-text-track-display {
 }
 
 .vjs-playback-rate .vjs-playback-rate-value {
-  pointer-eiedgts: none;
+  pointer-events: none;
   font-size: 1.5em;
   line-height: 2;
   text-align: center;

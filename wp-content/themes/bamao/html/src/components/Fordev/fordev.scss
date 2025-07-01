@@ -1,10 +1,10 @@
-.iedg-fordev {
-	color: black;
-	
-    #iedg-fordev-toggler {
+.bm-fordev {
+    color: black;
+
+    #bm-fordev-toggler {
         display: none;
 
-        &:checked + .iedg-fordev__inner {
+        &:checked + .bm-fordev__inner {
             transform: translateX(0);
         }
     }
@@ -23,13 +23,16 @@
 
     &__header {
         display: block;
-        width: (192px/4);
+        width: 3.375rem;
         position: absolute;
         top: 0;
         right: 100%;
         margin-bottom: 0;
         cursor: pointer;
+        background: #eeeeee;
+        border-radius: 0.5rem 0 0 0.5rem;
         box-shadow: 1px 2px 10px rgba(85, 85, 85, 0.2);
+        padding: 0.25rem 0.5rem;
 
         img {
             display: block;
@@ -56,7 +59,7 @@
     }
 }
 
-.iedg-fordev-list {
+.bm-fordev-list {
     margin-bottom: 0;
     padding-left: 0;
 

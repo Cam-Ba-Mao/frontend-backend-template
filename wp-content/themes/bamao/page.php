@@ -5,11 +5,7 @@
  */
 ?>
 <?php get_header();
-    
-
     while (have_posts()) : the_post();
-       
-           the_content(); 
-        
+        do_action('iedg_content_general_page', get_the_ID());
     endwhile;
 get_footer();

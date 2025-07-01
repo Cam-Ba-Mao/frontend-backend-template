@@ -1,116 +1,80 @@
 <?php
-/**
-@ Khai bao hang gia tri
-	@ THEME_URL = lay duong dan thu muc theme
-	@ CORE = lay duong dan cua thu muc /core
-**/
-define( 'THEME_URL', get_stylesheet_directory() );
-define ( 'CORE', THEME_URL . "/core" );
+define('IEDG_TEXT_DOMAIN', 'iedg');
+define ('GOOGLE_MAP_API_KEY', 'AIzaSyD9CUGGaA6_P2HC2NMGhqTfv1aRe_VN2gw');
 
-/**
-@ Nhung file /core/init.php
-**/
-require_once( CORE . "/init.php" );
-require_once( CORE . "/acf.php" );
-require_once( CORE . "/navigation.php" );
-require_once( CORE . "/ThemeCustomizer.php" );
-require_once( CORE . "/common.php" );
-require_once( CORE . "/Product/ProductHook.php" );
-require_once( CORE . "/Product/ProductFunctions.php" );
-require_once( CORE . "/Pages/Archive.php" );
-require_once( CORE . "/Pages/Single.php" );
-/**
-@ Thiet lap chieu rong noi dung
-**/
-if ( !isset($content_width) ) {
-	$content_width = 620;
+if (!function_exists('iedg_setup')) :
+    /**
+     * Sets up theme defaults and registers support for various WordPress features.
+     *
+     * Note that this function is hooked into the after_setup_theme hook, which
+     * runs before the init hook. The init hook is too late for some features, such
+     * as indicating support for post thumbnails.
+     */
+    function iedg_setup()
+    {
+        /*
+         * Make theme available for translation.
+         * Translations can be filed in the /languages/ directory.
+         * If you're building a theme based on Ven Creative, use a find and replace
+         * to change 'iedg' to the name of your theme in all the template files.
+         */
+        load_theme_textdomain('pennacademy', get_template_directory() . '/languages');
+
+        // Add default posts and comments RSS feed links to head.
+        add_theme_support('automatic-feed-links');
+
+        /*
+         * Let WordPress manage the document title.
+         * By adding theme support, we declare that this theme does not use a
+         * hard-coded <title> tag in the document head, and expect WordPress to
+         * provide it for us.
+         */
+        add_theme_support('title-tag');
+
+        /*
+         * Enable support for Post Thumbnails on posts and pages.
+         *
+         * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+         */
+        add_theme_support('post-thumbnails');
+
+        /*
+         * Switch default core markup for search form, comment form, and comments
+         * to output valid HTML5.
+         */
+        add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption',));
+
+        add_post_type_support( 'page', 'excerpt' );
+
+        // Set up the WordPress core custom background feature.
+        add_theme_support('custom-background', apply_filters('iedg_custom_background_args', array('default-color' => 'ffffff', 'default-image' => '',)));
+
+        // Add theme support for selective refresh for widgets.
+        add_theme_support('customize-selective-refresh-widgets');
+
+        /**
+         * Add support for core custom logo.
+         *
+         * @link https://codex.wordpress.org/Theme_Logo
+         */
+        add_theme_support('custom-logo', array('height' => 250, 'width' => 250, 'flex-width' => true, 'flex-height' => true));
+
+        /**
+         * Add support woocommerce
+         */
+        add_theme_support( 'woocommerce' );
+    }
+endif;
+add_action('after_setup_theme', 'iedg_setup');
+
+add_filter('locale', 'iedg_setLocale');
+function iedg_setLocale($locale) {
+    if ( is_admin() ) {
+        return 'vi';
+    }
+
+    return $locale;
 }
-
-/**
-@ Khai bao chuc nang cua theme 
-**/
-if ( !function_exists('bamao_theme_setup') ) {
-	function bamao_theme_setup() {
-
-		/* Thiet lap textdomain */
-		$language_folder = THEME_URL . '/languages';
-		load_theme_textdomain( 'bamao', $language_folder );
-		/* Tu dong them link RSS len <head> **/
-		add_theme_support( 'automatic-feed-links' );
-
-		/* Them post thumbnail */
-		add_theme_support( 'post-thumbnails' );
-
-		/* Post Format */
-		add_theme_support( 'post-formats', array(
-			'image',
-			'video',
-			'gallery',
-			'quote',
-			'link'
-		) );
-
-		/* Them title-tag */
-		add_theme_support( 'title-tag' );
-
-		/* Them custom background */
-		$default_background = array(
-			'default-color' => '#e8e8e8'
-		);
-		add_theme_support( 'custom-background', $default_background );
-
-		
-
-		/* Them menu */
-		register_nav_menu( 'primary-menu', __('Primary Menu', 'bamao') );
-
-		/* Tao sidebar */
-		$sidebar = array(
-			'name' => __('Main Sidebar', 'bamao'),
-			'id' => 'main-sidebar',
-			'description' => __('Default sidebar'),
-			'class' => 'main-sidebar',
-			'before_title' => '<h3 class="widgettitle">',
-			'after_title' => '</h3>'
-		);
-		register_sidebar( $sidebar );
-
-		
-
-	}
-	add_action( 'init', 'bamao_theme_setup' );
-}
-
-/**
- * Add support for core custom logo.
- *
- * @link https://codex.wordpress.org/Theme_Logo
- */
-function theme_prefix_setup() {
-	
-	add_theme_support( 'custom-logo', array(
-		'height' => 250, 
-		'width' => 250, 
-		'flex-width' => true, 
-		'flex-height' => true
-	) );
-
-	/**
-	 * Add support woocommerce
-	 */
-	add_theme_support( 'woocommerce' );
-
-}
-add_action( 'after_setup_theme', 'theme_prefix_setup' );
-
-function theme_prefix_the_custom_logo() {
-	
-	if ( function_exists( 'the_custom_logo' ) ) {
-		the_custom_logo();
-	}
-
-}
-
 
 /**
  * ------------------------------------------------------------------------------------------------
@@ -125,7 +89,7 @@ if (!function_exists('iedg_styles')) {
         
         // version for development.
         $version = rand(0, 99);
-        wp_enqueue_style('bootstrap-style', get_template_directory_uri() . '/html/dist/css/bootstrap.css');
+        wp_enqueue_style('bootstrap-style', get_template_directory_uri() . '/html/dist/css/bootstrap.min.css');
         wp_enqueue_style('bundle-style', get_template_directory_uri() . '/html/dist/css/bundle.min.css');
         wp_enqueue_style('main-style', get_template_directory_uri() . '/html/dist/css/main' . $is_min . '.css', array(), time());
         wp_enqueue_style('iedg-style', get_stylesheet_uri());
@@ -143,7 +107,18 @@ if (!function_exists('iedg_admin_styles')) {
     {
         $is_min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG == true ? '' : '.min';
         $version = rand(0, 99);
-        wp_enqueue_style('bootstrap-style', get_template_directory_uri() . '/html/dist/admin/admin.css', array(), time());
+        wp_enqueue_style('admin-style', get_template_directory_uri() . '/html/dist/admin/admin.css', array(), time());
+        wp_enqueue_script('admin-js', get_template_directory_uri() . '/html/dist/admin/admin.js');
+
+        // // Localize the variable
+        // wp_localize_script('admin-js', 'theme_vars', array(
+        //     'placeholder_image' => get_template_directory_uri() . '/html/dist/images/no-image-avaliable.jpg',
+        // ));
+
+        if ( ! did_action( 'wp_enqueue_media' ) ) {
+            wp_enqueue_media();
+        }
+
     }
 }
 
@@ -193,7 +168,22 @@ function iedg_defer_script($tag, $handle)
     }
     return $tag;
 }
+add_filter('script_loader_tag', 'iedg_defer_script', 10, 2);
 
+/**
+ * ------------------------------------------------------------------------------------------------
+ * Load all CORE Classes and files
+ * ------------------------------------------------------------------------------------------------
+ */
+require 'core/core.php';
+require 'inc/acf.php';
+require 'inc/common.php';
+require 'inc/navigation.php';
+require 'inc/customizer.php';
+require 'inc/wp-form.php';
 
+add_filter( 'big_image_size_threshold', '__return_false' );
 
-
+if (!current_user_can('administrator')) {
+    show_admin_bar(false);
+}
